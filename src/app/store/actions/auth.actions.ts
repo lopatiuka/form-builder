@@ -1,5 +1,4 @@
 import { createAction, props } from '@ngrx/store';
-import { User } from '../interfaces/user.interface';
 import { authActions } from './auth.action.types';
 // import { authActions } from './auth.action.types';
 

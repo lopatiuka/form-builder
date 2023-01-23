@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Form } from '@angular/forms';
-import { DumbComponent } from '../abstract/dumb.component';
+import { DumbComponent } from '../shared/dumb.component';
 import { FormItem } from '../interfaces/form-item.interface';
 
 @Component({

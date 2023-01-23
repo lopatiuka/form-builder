@@ -1,11 +1,10 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { CdkDragDrop, moveItemInArray, copyArrayItem } from '@angular/cdk/drag-drop';
-import { DumbComponent } from '../abstract/dumb.component';
 import { FormItem } from '../interfaces/form-item.interface';
 import { Store } from '@ngrx/store';
 import { Observable, filter, map, takeUntil, Subject } from 'rxjs';
-import { closeError, deleteItem, dropItem, getDroppedItems, getFormStyles, getItems, updateFormStyles, updateItem } from '../_actions/builder.actions';
-import { SmartComponent } from '../abstract/smart.component';
+import { closeError, deleteItem, dropItem, getDroppedItems, getFormStyles, getItems, updateFormStyles, updateItem } from '../store/actions/builder.actions';
+import { SmartComponent } from '../shared/smart.component';
 import { ServerError } from '../interfaces/error.interface';
 import { FormStyles } from '../interfaces/form-styles.interface';
 import { Router } from '@angular/router';

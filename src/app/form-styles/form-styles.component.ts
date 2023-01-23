@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, forwardRef, Input, Output } from '@angular/core';
 import { ControlValueAccessor, FormControl, FormGroup, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { Subject, takeUntil } from 'rxjs';
-import { DumbComponent } from '../abstract/dumb.component';
+import { DumbComponent } from '../shared/dumb.component';
 import { SelectedStylesComponent } from '../selected-styles/selected-styles.component';
 
 @Component({

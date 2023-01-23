@@ -1,5 +1,5 @@
 import { createReducer, on } from '@ngrx/store';
-import { closeError, loginFail } from '../_actions/auth.actions';
+import { closeError, loginFail } from '../actions/auth.actions';
 
 
 export const initialState = {

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { FormItem } from '../interfaces/form-item.interface';
-import { FormStyles } from '../interfaces/form-styles.interface';
+import { FormItem } from '../../interfaces/form-item.interface';
+import { FormStyles } from '../../interfaces/form-styles.interface';
 
 
 @Injectable({

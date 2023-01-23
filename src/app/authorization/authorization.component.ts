@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { ServerError } from '../interfaces/error.interface';
-import { closeError, login } from '../_actions/auth.actions';
+import { closeError, login } from '../store/actions/auth.actions';
 
 @Component({
   selector: 'app-authorization',
