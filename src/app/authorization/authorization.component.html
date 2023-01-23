@@ -1,0 +1,42 @@
+<div class="container-xl">
+    <div *ngrxLet="error$; let error">
+        <div *ngIf="error.status">
+            <h2 *ngIf="error.message === 'Bad Request' ">Error: Email or password is incorrect</h2>
+            <button (click)="closeError()">X</button>
+        </div>
+    </div>
+    <div [cdkPortalOutlet]="selectedPortal"></div>
+
+    <ng-template cdkPortal #loginForm="cdkPortal">
+        <h2>Sign in</h2>
+        <form action="http://localhost:3000/login" method="POST">
+            <mat-form-field class="example-form-field">
+                <mat-label>Email</mat-label>
+                <input matInput name="email" [(ngModel)]="user.email">
+            </mat-form-field><br/>
+            <mat-form-field class="example-form-field">
+                <mat-label>Password</mat-label>
+                <input matInput type="password" name="password" [(ngModel)]="user.password">
+            </mat-form-field><br/>
+            <p></p>
+            <button mat-raised-button color="primary" (click)="login()">Login</button>
+            <p>Or <a (click)="selectedPortal = signupFormPortal">SIGN UP</a></p>
+        </form>
+    </ng-template>
+
+    <ng-template cdkPortal #signupForm="cdkPortal">
+        <h2>Sign up</h2>
+        <form action="http://localhost:3000/users" method="POST">
+            <mat-form-field class="example-form-field">
+                <mat-label>Email</mat-label>
+                <input matInput name="email" [(ngModel)]="user.email">
+            </mat-form-field><br/>
+            <mat-form-field class="example-form-field">
+                <mat-label>Password</mat-label>
+                <input matInput type="password" name="password" [(ngModel)]="user.password">
+            </mat-form-field><br/>
+            <button mat-raised-button color="primary" (click)="login(true)">Login</button>
+            <p>Or <a (click)="selectedPortal = loginFormPortal">Login</a></p>
+        </form>
+    </ng-template>
+</div>

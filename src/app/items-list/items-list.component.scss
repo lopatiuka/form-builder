@@ -1,0 +1,20 @@
+.ng-star-inserted {
+    display: flex;
+    justify-content: center;
+    max-width: 100%;
+}
+
+.mat-mdc-form-field {
+    width: 100%;
+    cursor: move;
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    input, textarea {
+        &:hover {
+          cursor: pointer;
+        }
+    }
+}

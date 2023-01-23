@@ -1,0 +1,13 @@
+.styles {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    & > * {
+        margin-right: 10px;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}
