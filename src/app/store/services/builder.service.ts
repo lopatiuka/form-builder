@@ -26,7 +26,7 @@ export class BuilderService {
   }
 
   updateItem(body: FormItem) {
-    let result = this.http.patch<FormItem[]>(`http://localhost:3000/selectedItems/${ body.id }`, body);
+    let result = this.http.patch<FormItem>(`http://localhost:3000/selectedItems/${ body.id }`, body);
     return result
   }
 

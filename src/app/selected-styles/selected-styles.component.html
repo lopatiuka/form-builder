@@ -17,12 +17,12 @@ id="accordion-header-1"
     [style.display]="accordionItem1.expanded ? '' : 'none'"
     [attr.id]="'accordion-body-1'"
     [attr.aria-labelledby]="'accordion-header-1'">
-        <div *ngIf="selectedItemControl.value.id else elseBlock" [formGroup]="selectedItemControl">
+        <div class="selected-item-styles" *ngIf="selectedItemControl.value.id else elseBlock" [formGroup]="selectedItemControl">
             <div class="styles styles--regular">
                 <div>
                     <mat-form-field>
                         <mat-label>Width (px)</mat-label>
-                        <input matInput type="number" formControlName="width" (change)="changeStyles()">
+                        <input class="selected-item-styles--width" matInput type="number" formControlName="width" (change)="changeStyles()">
                     </mat-form-field>
                 </div>  
                 <div>
@@ -109,7 +109,7 @@ id="accordion-header-1"
         </div>
 
         <ng-template #elseBlock>
-            <h2>Select item</h2>
+            <h2 class="title">Select item</h2>
         </ng-template>
     </div>
 </cdk-accordion-item>

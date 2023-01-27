@@ -13,27 +13,27 @@ import { SelectedStylesComponent } from '../selected-styles/selected-styles.comp
     useExisting: forwardRef(() => FormStylesComponent),
     multi: true
   }],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  // changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class FormStylesComponent extends DumbComponent implements ControlValueAccessor {
 
   private onTouched = () => {};
   private readonly unsubscribe$ = new Subject();
-  protected formStyles = new FormGroup({
-    padding: new FormControl(''),
+
+  constructor() {
+    super();
+  }
+
+  formStyles = new FormGroup({
+    padding: new FormControl(0),
     borderStyle: new FormControl(''),
     borderWidth: new FormControl(''),
     borderColor: new FormControl(''),
     borderRadius: new FormControl(''),
   })
 
-  constructor() {
-    super();
-  }
-
   @Input() 
   set styles(item: any) {
-    
     if(item) {
       setTimeout(() => {
         this.formStyles.setValue({

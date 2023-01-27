@@ -28,13 +28,13 @@ export class SelectedStylesComponent extends DumbComponent implements ControlVal
   @Output() changeStylesEvent = new EventEmitter();
   onChangeSub: any;
 
-  protected borderStyle = new FormGroup({
+  borderStyle = new FormGroup({
     style: new FormControl(''),
     width: new FormControl(''),
     color: new FormControl('')
   })
 
-  protected selectedItemControl = new FormGroup({
+  selectedItemControl = new FormGroup({
     id: new FormControl(''),
     type: new FormControl(''),
     value: new FormControl(''),

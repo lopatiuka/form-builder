@@ -22,10 +22,10 @@ export class AuthEffects {
         ofType(login),
         switchMap(action => this.authService.login(action.payload.body, action.payload.register)
         .pipe(
-            map((token: any) => {
-                document.cookie = `accessToken=${ token.accessToken }`;
+            map((response: any) => {
+                document.cookie = `accessToken=${ response.accessToken }`;
                 this.router.navigate(['builder']);
-                return loginSuccess({ token: token })
+                return loginSuccess({ token: response.accessToken })
             }),
             catchError((error) => {
             return of(loginFail({ message: error.statusText }))})

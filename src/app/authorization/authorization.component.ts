@@ -1,6 +1,5 @@
 import { Portal, TemplatePortal } from '@angular/cdk/portal';
 import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnDestroy, OnInit, TemplateRef, ViewChild, ViewContainerRef } from '@angular/core';
-import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { ServerError } from '../interfaces/error.interface';

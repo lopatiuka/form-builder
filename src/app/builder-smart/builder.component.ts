@@ -18,13 +18,13 @@ import { Router } from '@angular/router';
 })
 export class BuilderComponent extends SmartComponent implements OnInit, OnDestroy {
 
-  protected formItems: FormItem[] = [];
-  protected selectedItem!: FormItem;
-  protected droppedItems$: Observable<FormItem[]> = this.store.select(state => state.builder.droppedItems);
-  protected items$: Observable<FormItem[]> = this.store.select(state => state.builder.items);
-  protected formStyles!: FormStyles; 
-  protected error$: Observable<ServerError> = this.store.select(state => state.builder.error);
-  protected formStyles$ = this.store.select(state => state.builder.formStyles);
+  formItems: FormItem[] = [];
+  selectedItem!: FormItem;
+  droppedItems$: Observable<FormItem[]> = this.store.select(state => state.builder.droppedItems);
+  items$: Observable<FormItem[]> = this.store.select(state => state.builder.items);
+  formStyles!: FormStyles; 
+  error$: Observable<ServerError> = this.store.select(state => state.builder.error);
+  formStyles$ = this.store.select(state => state.builder.formStyles);
   isMoving: boolean = false;
 
   constructor(private cdr: ChangeDetectorRef, private router: Router, private store: Store<{ builder: { 

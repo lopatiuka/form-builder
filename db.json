@@ -1,9 +1,9 @@
 {
   "formStyles": {
-    "padding": 15,
+    "padding": "15",
     "borderColor": "#d0d5d7",
-    "borderWidth": 3,
-    "borderRadius": 10,
+    "borderWidth": "3",
+    "borderRadius": "10",
     "borderStyle": "solid"
   },
   "users": [
@@ -107,25 +107,25 @@
   ],
   "selectedItems": [
     {
-      "type": "text",
-      "placeholder": "Email",
+      "type": "checkbox",
+      "placeholder": "Check",
       "value": "",
-      "width": 210,
-      "height": 80,
-      "required": true,
+      "width": "",
+      "height": "",
+      "required": false,
       "border": {
         "style": "",
         "width": "",
         "color": ""
       },
-      "fontSize": 17,
-      "fontWeight": "400",
+      "fontSize": "",
+      "fontWeight": "",
       "color": "",
       "id": 10
     },
     {
-      "type": "text",
-      "placeholder": "Text",
+      "type": "checkbox",
+      "placeholder": "Check",
       "value": "",
       "width": "",
       "height": "",
@@ -143,7 +143,7 @@
     {
       "type": "checkbox",
       "value": "",
-      "placeholder": "I agree",
+      "placeholder": "Check",
       "width": "",
       "height": "",
       "required": false,
@@ -156,23 +156,6 @@
       "fontWeight": "",
       "color": "",
       "id": 13
-    },
-    {
-      "type": "button",
-      "value": "",
-      "placeholder": "Submit new",
-      "width": "",
-      "height": "",
-      "required": false,
-      "border": {
-        "style": "",
-        "width": "",
-        "color": ""
-      },
-      "fontSize": "",
-      "fontWeight": "",
-      "color": "",
-      "id": 14
     },
     {
       "type": "textarea",
@@ -192,26 +175,9 @@
       "id": 15
     },
     {
-      "type": "textarea",
+      "type": "button",
       "value": "",
-      "placeholder": "Placeholder",
-      "width": 250,
-      "height": 105,
-      "required": false,
-      "border": {
-        "style": "solid",
-        "width": 3,
-        "color": ""
-      },
-      "fontSize": "",
-      "fontWeight": "",
-      "color": "",
-      "id": 16
-    },
-    {
-      "type": "textarea",
-      "value": "",
-      "placeholder": "Placeholder",
+      "placeholder": "Button",
       "width": "",
       "height": "",
       "required": false,
@@ -223,7 +189,177 @@
       "fontSize": "",
       "fontWeight": "",
       "color": "",
-      "id": 17
+      "id": 18
+    },
+    {
+      "id": 19,
+      "value": "",
+      "type": "checkbox",
+      "placeholder": "Check",
+      "width": "",
+      "height": "",
+      "required": false,
+      "border": {
+        "style": "",
+        "width": "",
+        "color": ""
+      },
+      "fontSize": "",
+      "fontWeight": "",
+      "color": ""
+    },
+    {
+      "id": 20,
+      "value": "",
+      "type": "checkbox",
+      "placeholder": "Check",
+      "width": "",
+      "height": "",
+      "required": false,
+      "border": {
+        "style": "",
+        "width": "",
+        "color": ""
+      },
+      "fontSize": "",
+      "fontWeight": "",
+      "color": ""
+    },
+    {
+      "id": 21,
+      "value": "",
+      "type": "checkbox",
+      "placeholder": "Check",
+      "width": "",
+      "height": "",
+      "required": false,
+      "border": {
+        "style": "",
+        "width": "",
+        "color": ""
+      },
+      "fontSize": "",
+      "fontWeight": "",
+      "color": ""
+    },
+    {
+      "id": 1,
+      "value": "",
+      "type": "checkbox",
+      "placeholder": "Check",
+      "width": "",
+      "height": "",
+      "required": false,
+      "border": {
+        "style": "",
+        "width": "",
+        "color": ""
+      },
+      "fontSize": "",
+      "fontWeight": "",
+      "color": ""
+    },
+    {
+      "id": 22,
+      "value": "",
+      "type": "checkbox",
+      "placeholder": "Check",
+      "width": "",
+      "height": "",
+      "required": false,
+      "border": {
+        "style": "",
+        "width": "",
+        "color": ""
+      },
+      "fontSize": "",
+      "fontWeight": "",
+      "color": ""
+    },
+    {
+      "id": 23,
+      "value": "",
+      "type": "checkbox",
+      "placeholder": "Check",
+      "width": "",
+      "height": "",
+      "required": false,
+      "border": {
+        "style": "",
+        "width": "",
+        "color": ""
+      },
+      "fontSize": "",
+      "fontWeight": "",
+      "color": ""
+    },
+    {
+      "value": "",
+      "type": "checkbox",
+      "placeholder": "Check",
+      "width": "",
+      "height": "",
+      "required": false,
+      "border": {
+        "style": "",
+        "width": "",
+        "color": ""
+      },
+      "fontSize": "",
+      "fontWeight": "",
+      "color": "",
+      "id": 24
+    },
+    {
+      "value": "",
+      "type": "checkbox",
+      "placeholder": "Check",
+      "width": "",
+      "height": "",
+      "required": false,
+      "border": {
+        "style": "",
+        "width": "",
+        "color": ""
+      },
+      "fontSize": "",
+      "fontWeight": "",
+      "color": "",
+      "id": 25
+    },
+    {
+      "value": "",
+      "type": "checkbox",
+      "placeholder": "Check",
+      "width": "",
+      "height": "",
+      "required": false,
+      "border": {
+        "style": "",
+        "width": "",
+        "color": ""
+      },
+      "fontSize": "",
+      "fontWeight": "",
+      "color": "",
+      "id": 26
+    },
+    {
+      "value": "",
+      "type": "checkbox",
+      "placeholder": "Check",
+      "width": "",
+      "height": "",
+      "required": false,
+      "border": {
+        "style": "",
+        "width": "",
+        "color": ""
+      },
+      "fontSize": "",
+      "fontWeight": "",
+      "color": "",
+      "id": 27
     }
   ]
 }
