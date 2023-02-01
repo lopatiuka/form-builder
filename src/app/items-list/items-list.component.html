@@ -1,6 +1,6 @@
 <div *ngFor="let item of items;">
     <div>
-        <div class="checkbox-wrapper" [id]="item.id" *ngIf="item.type === 'checkbox'">
+        <div class="checkbox-wrapper" data-test="checkbox-item" [id]="item.id" *ngIf="item.type === 'checkbox'">
             <mat-checkbox class="example-margin" [required]="item.required" [color]="item.color" #checkbox (click)="getStyles(item.id)" cdkDrag [ngStyle]="{
                 'width.px': currentItem && item.id === currentItem.id ? currentItem.width : item.width, 
                 'height.px': currentItem && item.id === currentItem.id ? currentItem.height : item.height, 
@@ -8,7 +8,7 @@
                 'font-weight': currentItem && item.id === currentItem.id ? currentItem.fontWeight : item.fontWeight }">{{item.placeholder | format}}
             </mat-checkbox>
         </div>
-        <div *ngIf="item.type === 'select'">
+        <div data-test="select-item" *ngIf="item.type === 'select'">
             <mat-form-field appearance="fill" [ngStyle]="{
             'width.px': currentItem && item.id === currentItem.id ? currentItem.width : item.width,
             'height.px': currentItem && item.id === currentItem.id ? currentItem.height : item.height,
@@ -27,7 +27,7 @@
                 </mat-select>
             </mat-form-field>                         
         </div>
-        <div *ngIf="item.type === 'text'">
+        <div data-test="input-item" *ngIf="item.type === 'text'">
             <mat-form-field class="" [ngStyle]="{
                 'width.px': currentItem && item.id === currentItem.id ? currentItem.width : item.width, 
                 'height.px': currentItem && item.id === currentItem.id ? currentItem.height : item.height }" (click)="getStyles(item.id)" cdkDrag>
@@ -38,7 +38,7 @@
                     'color': currentItem && item.id === currentItem.id ? currentItem.color : item.color }" matInput [type]="item.type" #input>
             </mat-form-field>
         </div>
-        <div *ngIf="item.type === 'button'">
+        <div data-test="button-item" *ngIf="item.type === 'button'">
             <button mat-raised-button color="primary" (click)="getStyles(item.id)" cdkDrag [ngStyle]="{
                 'width.px': currentItem && item.id === currentItem.id ? currentItem.width : item.width, 
                 'height.px': currentItem && item.id === currentItem.id ? currentItem.height : item.height,
@@ -49,7 +49,7 @@
                 'border-color': currentItem && item.id === currentItem.id ? currentItem.border.color : item.border.color,
                 'border-width.px': currentItem && item.id === currentItem.id ? currentItem.border.width : item.border.width }">{{item.placeholder | format}}</button>
         </div>
-        <div *ngIf="item.type === 'textarea'">
+        <div data-test="textarea-item" *ngIf="item.type === 'textarea'">
             <mat-form-field appearance="fill" [ngStyle]="{
                 'width.px': currentItem && item.id === currentItem.id ? currentItem.width : item.width, 
                 'height.px': currentItem && item.id === currentItem.id ? currentItem.height : item.height,

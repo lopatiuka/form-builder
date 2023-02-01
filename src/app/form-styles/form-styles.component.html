@@ -6,7 +6,7 @@ tabindex="0"
 id="accordion-header-0"
 [attr.aria-expanded]="accordionItem.expanded"
 [attr.aria-controls]="'accordion-body-0'">
-<div class="accordion-item-header" (click)="accordionItem.toggle()">
+<div data-test="accordion-header-form-styles" class="accordion-item-header" (click)="accordionItem.toggle()">
     <span class="accordion-item-description">
     Form style
     </span>
@@ -16,7 +16,8 @@ id="accordion-header-0"
     role="region"
     [style.display]="accordionItem.expanded ? '' : 'none'"
     [attr.id]="'accordion-body-0'"
-    [attr.aria-labelledby]="'accordion-header-0'" [formGroup]="formStyles">
+    [attr.aria-labelledby]="'accordion-header-0'" [formGroup]="formStyles"
+    data-test="accordion-body-form-styles">
     <div>
         <mat-form-field>
             <mat-label>Padding (px)</mat-label>

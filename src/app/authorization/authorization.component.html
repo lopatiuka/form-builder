@@ -12,15 +12,15 @@
         <form action="http://localhost:3000/login" method="POST">
             <mat-form-field class="example-form-field">
                 <mat-label>Email</mat-label>
-                <input matInput name="email" [(ngModel)]="user.email">
+                <input matInput data-test="login-email" name="email" [(ngModel)]="user.email">
             </mat-form-field><br/>
             <mat-form-field class="example-form-field">
                 <mat-label>Password</mat-label>
-                <input matInput type="password" name="password" [(ngModel)]="user.password">
+                <input matInput data-test="login-password" type="password" name="password" [(ngModel)]="user.password">
             </mat-form-field><br/>
             <p></p>
-            <button mat-raised-button color="primary" (click)="login()">Login</button>
-            <p>Or <a (click)="selectedPortal = signupFormPortal">SIGN UP</a></p>
+            <button mat-raised-button data-test="login-submit" color="primary" (click)="login()">Login</button>
+            <p>Or <a (click)="selectedPortal = signupFormPortal" data-test="to-signup">SIGN UP</a></p>
         </form>
     </ng-template>
 
@@ -29,13 +29,13 @@
         <form action="http://localhost:3000/users" method="POST">
             <mat-form-field class="example-form-field">
                 <mat-label>Email</mat-label>
-                <input matInput name="email" [(ngModel)]="user.email">
+                <input matInput data-test="signup-email" name="email" [(ngModel)]="user.email">
             </mat-form-field><br/>
             <mat-form-field class="example-form-field">
                 <mat-label>Password</mat-label>
-                <input matInput type="password" name="password" [(ngModel)]="user.password">
+                <input matInput data-test="signup-password" type="password" name="password" [(ngModel)]="user.password">
             </mat-form-field><br/>
-            <button mat-raised-button color="primary" (click)="login(true)">Login</button>
+            <button mat-raised-button data-test="signup-submit" color="primary" (click)="login(true)">Login</button>
             <p>Or <a (click)="selectedPortal = loginFormPortal">Login</a></p>
         </form>
     </ng-template>

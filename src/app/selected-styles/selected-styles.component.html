@@ -6,7 +6,7 @@ tabindex="0"
 id="accordion-header-1"
 [attr.aria-expanded]="accordionItem1.expanded"
 [attr.aria-controls]="'accordion-body-1'">
-<div class="accordion-item-header" (click)="accordionItem1.toggle()">
+<div data-test="accordion-header-item-styles" class="accordion-item-header" (click)="accordionItem1.toggle()">
     <span class="accordion-item-description">
     Item style
     </span>
@@ -16,7 +16,8 @@ id="accordion-header-1"
     role="region"
     [style.display]="accordionItem1.expanded ? '' : 'none'"
     [attr.id]="'accordion-body-1'"
-    [attr.aria-labelledby]="'accordion-header-1'">
+    [attr.aria-labelledby]="'accordion-header-1'"
+    data-test="accordion-body-item-styles">
         <div class="selected-item-styles" *ngIf="selectedItemControl.value.id else elseBlock" [formGroup]="selectedItemControl">
             <div class="styles styles--regular">
                 <div>
@@ -109,7 +110,7 @@ id="accordion-header-1"
         </div>
 
         <ng-template #elseBlock>
-            <h2 class="title">Select item</h2>
+            <h2 data-test="no-item-selected" class="title">Select item</h2>
         </ng-template>
     </div>
 </cdk-accordion-item>
