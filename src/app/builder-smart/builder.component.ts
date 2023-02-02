@@ -18,6 +18,7 @@ import { Router } from '@angular/router';
 })
 export class BuilderComponent extends SmartComponent implements OnInit, OnDestroy {
 
+  title = 'Build your form';
   formItems: FormItem[] = [];
   selectedItem!: FormItem;
   droppedItems$: Observable<FormItem[]> = this.store.select(state => state.builder.droppedItems);

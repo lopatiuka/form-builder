@@ -23,6 +23,7 @@ id="accordion-header-1"
                     <mat-form-field>
                         <mat-label>Width (px)</mat-label>
                         <input class="selected-item-styles--width" matInput type="number" formControlName="width" (change)="changeStyles()">
+                        <p>{{selectedItemControl.controls.width.value | debounce}}</p>
                     </mat-form-field>
                 </div>  
                 <div>

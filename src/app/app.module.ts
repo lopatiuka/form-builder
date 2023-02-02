@@ -33,6 +33,11 @@ import { authReducer } from './store/reducers/auth.reducer';
 import { FormatPipe } from './pipes/FormatPipe';
 import { FormStylesComponent } from './form-styles/form-styles.component';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { ItemBorderDirective } from './directives/item-border';
+import { ViewportHeightDirective } from './directives/viewport-height';
+import { DebouncePipe } from './pipes/DebouncePipe';
+import { NaturalType } from './pipes/NaturalType';
+import { CalloutDirective } from './directives/callout';
 
 
 @NgModule({
@@ -43,7 +48,12 @@ import { MatGridListModule } from '@angular/material/grid-list';
     AuthorizationComponent,
     SelectedStylesComponent,
     FormatPipe,
-    FormStylesComponent
+    DebouncePipe,
+    NaturalType,
+    FormStylesComponent,
+    ItemBorderDirective,
+    ViewportHeightDirective,
+    CalloutDirective
   ],
   imports: [
     BrowserModule,
