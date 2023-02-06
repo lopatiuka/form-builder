@@ -30,7 +30,10 @@
         <div data-test="input-item" *ngIf="item.type === 'text'">
             <mat-form-field class="" [ngStyle]="{
                 'width.px': currentItem && item.id === currentItem.id ? currentItem.width : item.width, 
-                'height.px': currentItem && item.id === currentItem.id ? currentItem.height : item.height }" (click)="getStyles(item.id)" cdkDrag>
+                'height.px': currentItem && item.id === currentItem.id ? currentItem.height : item.height,
+                'border-style': currentItem && item.id === currentItem.id ? currentItem.border.style : item.border.style,
+                'border-color': currentItem && item.id === currentItem.id ? currentItem.border.color : item.border.color,
+                'border-width.px': currentItem && item.id === currentItem.id ? currentItem.border.width : item.border.width }" (click)="getStyles(item.id)" cdkDrag>
                 <mat-label>{{item.placeholder}}</mat-label>
                 <input [required]="item.required" [ngStyle]="{
                     'font-size.px': currentItem && item.id === currentItem.id ? currentItem.fontSize : item.fontSize,

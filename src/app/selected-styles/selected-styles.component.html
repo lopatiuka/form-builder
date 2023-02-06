@@ -23,25 +23,25 @@ id="accordion-header-1"
                 <div>
                     <mat-form-field>
                         <mat-label>Width (px)</mat-label>
-                        <input class="selected-item-styles--width" matInput type="number" formControlName="width" (change)="changeStyles()">
+                        <input class="selected-item-styles--width" data-test="item-styles-width" matInput type="number" formControlName="width" (change)="changeStyles()">
                     </mat-form-field>
                 </div>  
                 <div>
                     <mat-form-field>
                         <mat-label>Height (px)</mat-label>
-                        <input matInput type="number" formControlName="height" (change)="changeStyles()">
+                        <input data-test="item-styles-height" matInput type="number" formControlName="height" (change)="changeStyles()">
                     </mat-form-field>
                 </div>     
                 <div>
                     <mat-form-field>
                         <mat-label>Font size (px)</mat-label>
-                        <input matInput type="number" formControlName="fontSize" (change)="changeStyles()">
+                        <input data-test="item-styles-font-size" matInput type="number" formControlName="fontSize" (change)="changeStyles()">
                     </mat-form-field>
                 </div>     
                 <div>
                     <mat-form-field appearance="fill">
                         <mat-label>Font weight</mat-label>
-                        <mat-select formControlName="fontWeight" (selectionChange)="changeStyles()">
+                        <mat-select data-test="item-styles-font-weight" formControlName="fontWeight" (selectionChange)="changeStyles()">
                             <mat-option value="100">
                                 100
                             </mat-option>
@@ -66,24 +66,24 @@ id="accordion-header-1"
                 <div>
                     <mat-form-field class="form-field">
                         <mat-label>Color</mat-label>
-                        <input matInput type="color" formControlName="color" (change)="changeStyles()">
+                        <input data-test="item-styles-font-color" matInput type="color" formControlName="color" (change)="changeStyles()">
                     </mat-form-field>
                 </div>
                 <div>
                     <mat-form-field>
                         <mat-label>Text</mat-label>
-                        <input matInput type="text" formControlName="placeholder" (change)="changeStyles()">
+                        <input data-test="item-styles-placeholder" matInput type="text" formControlName="placeholder" (change)="changeStyles()">
                     </mat-form-field>
                 </div>
                 <div>
-                    <mat-checkbox class="margin" cdkDrag formControlName="required" (change)="changeStyles()">Required</mat-checkbox>
+                    <mat-checkbox data-test="item-styles-required" class="margin" cdkDrag formControlName="required" (change)="changeStyles()">Required</mat-checkbox>
                 </div>
             </div>
             <div class="styles styles--border" [formGroup]="borderStyle">
                 <h4>Border</h4>
                 <mat-form-field appearance="fill">
                     <mat-label>Style</mat-label>
-                    <mat-select formControlName="style" (selectionChange)="changeStyles()">
+                    <mat-select data-test="item-styles-border-style" formControlName="style" (selectionChange)="changeStyles()">
                         <mat-option value="none">
                             None
                         </mat-option>
@@ -100,11 +100,11 @@ id="accordion-header-1"
                 </mat-form-field>   
                 <mat-form-field>
                     <mat-label>Border width (px)</mat-label>
-                    <input matInput type="number" formControlName="width" (change)="changeStyles()">
+                    <input data-test="item-styles-border-width" matInput type="number" formControlName="width" (change)="changeStyles()">
                 </mat-form-field>
                 <mat-form-field>
                     <mat-label>Border color</mat-label>
-                    <input matInput type="color" formControlName="color" (change)="changeStyles()">
+                    <input data-test="item-styles-border-color" matInput type="color" formControlName="color" (change)="changeStyles()">
                 </mat-form-field>
             </div>
         </div>

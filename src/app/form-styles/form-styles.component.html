@@ -21,13 +21,13 @@ id="accordion-header-0"
     <div>
         <mat-form-field>
             <mat-label>Padding (px)</mat-label>
-            <input class="form-padding" matInput type="number" formControlName="padding" (change)="changeFormStyles()">
+            <input class="form-padding" data-test="input-form-padding" matInput type="number" formControlName="padding" (change)="changeFormStyles()">
         </mat-form-field>
     </div>  
     <div>
         <mat-form-field appearance="fill">
             <mat-label>Border style</mat-label>
-            <mat-select formControlName="borderStyle" (selectionChange)="changeFormStyles()">
+            <mat-select formControlName="borderStyle" data-test="select-form-border-style" (selectionChange)="changeFormStyles()">
                 <mat-option value="none">
                     None
                 </mat-option>
@@ -46,19 +46,19 @@ id="accordion-header-0"
     <div>
         <mat-form-field>
             <mat-label>Border width (px)</mat-label>
-            <input class="form-border-width" matInput type="number" formControlName="borderWidth" (change)="changeFormStyles()">
+            <input class="form-border-width" matInput data-test="input-form-border-width" type="number" formControlName="borderWidth" (change)="changeFormStyles()">
         </mat-form-field>
     </div>     
     <div>
         <mat-form-field>
             <mat-label>Border color</mat-label>
-            <input matInput type="color" formControlName="borderColor" (change)="changeFormStyles()">
+            <input matInput type="color" data-test="input-form-border-color" formControlName="borderColor" (change)="changeFormStyles()">
         </mat-form-field>
     </div>
     <div>
         <mat-form-field>
             <mat-label>Border radius (px)</mat-label>
-            <input matInput type="number" formControlName="borderRadius" (change)="changeFormStyles()">
+            <input matInput type="number" data-test="input-form-border-radius" formControlName="borderRadius" (change)="changeFormStyles()">
         </mat-form-field>
     </div>
 </div>

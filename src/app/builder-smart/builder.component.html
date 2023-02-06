@@ -19,7 +19,7 @@
         <div class="container">
 
             <div>
-                <div class="delete-field" cdkDropList (cdkDropListDropped)="deleteItem($event)">
+                <div class="delete-field" data-test="delete-item" cdkDropList (cdkDropListDropped)="deleteItem($event)">
                     <h2>Drag here to delete</h2>
                 </div>
             </div>
@@ -27,13 +27,14 @@
             cdkDropList
             [cdkDropListData]="formItems"
             class="drop-form"
+            data-test="drop-zone"
             (cdkDropListDropped)="drop($event)" *ngIf="formStyles" [ngStyle]="{
                 'padding.px': formStyles.padding,
                 'border-style': formStyles.borderStyle,
                 'border-color': formStyles.borderColor,
                 'border-radius': formStyles.borderRadius,
                 'border-width.px': formStyles.borderWidth}">
-                <app-items-list (selectedStyles)="setSelectedItem($event)" [currentItem]="selectedItem" [items]="formItems"></app-items-list>
+                <app-items-list data-test="selected-items" (selectedStyles)="setSelectedItem($event)" [currentItem]="selectedItem" [items]="formItems"></app-items-list>
             </form>
         </div>
     </section>
@@ -42,7 +43,7 @@
         [cdkDropListData]="items$ | ngrxPush"
         cdkDropListSortingDisabled>
         <h3>Available fields</h3>
-            <app-items-list [items]="items$ | ngrxPush"></app-items-list>
+            <app-items-list data-test="available-items" [items]="items$ | ngrxPush"></app-items-list>
         </div>
     </section>
 </div>
