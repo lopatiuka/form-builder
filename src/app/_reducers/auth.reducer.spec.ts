@@ -1,4 +1,4 @@
-import { closeError, loginFail } from '../actions/auth.actions';
+import { closeError, loginFail } from '../_actions/auth.actions';
 import * as fromReducer from './auth.reducer';
 
 

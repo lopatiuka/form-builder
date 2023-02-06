@@ -2,9 +2,9 @@ import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { of } from 'rxjs';
 import { map, switchMap, catchError } from 'rxjs/operators';
-import { builderActions } from '../actions/builder.action.types';
-import { dropItem, dropItemSuccess, getDroppedItems, getDroppedItemsSuccess, getItems, getItemsSuccess, updateItem, updateItemSuccess, fail, getFormStylesSuccess, updateFormStyles, deleteItem, deleteItemSuccess, updateFormStylesSuccess } from '../actions/builder.actions';
-import { BuilderService } from '../services/builder.service';
+import { builderActions } from '../_actions/builder.action.types';
+import { dropItem, dropItemSuccess, getDroppedItems, getDroppedItemsSuccess, getItems, getItemsSuccess, updateItem, updateItemSuccess, fail, getFormStylesSuccess, updateFormStyles, deleteItem, deleteItemSuccess } from '../_actions/builder.actions';
+import { BuilderService } from '../_services/builder.service';
 
 @Injectable()
 export class BuilderEffects {

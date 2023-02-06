@@ -1,4 +1,4 @@
-<button class="logout-btn" mat-raised-button color="primary" (click)="logout()">Logout</button>
+<button mat-raised-button color="primary" (click)="logout()">Logout</button>
 <div *ngrxLet="error$; let error">
     <div *ngIf="error.status">
         <h2>Something wrong, try again</h2>

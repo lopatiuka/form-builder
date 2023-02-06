@@ -114,9 +114,9 @@
       "height": "",
       "required": false,
       "border": {
-        "style": "",
-        "width": "",
-        "color": ""
+        "style": "solid",
+        "width": 2,
+        "color": "#7a5c5c"
       },
       "fontSize": "",
       "fontWeight": "",
@@ -124,9 +124,9 @@
       "id": 10
     },
     {
-      "type": "checkbox",
-      "placeholder": "Check",
+      "type": "button",
       "value": "",
+      "placeholder": "ButtDsd",
       "width": "",
       "height": "",
       "required": false,
@@ -137,30 +137,13 @@
       },
       "fontSize": "",
       "fontWeight": "",
-      "color": "",
-      "id": 12
-    },
-    {
-      "type": "checkbox",
-      "value": "",
-      "placeholder": "Check",
-      "width": "",
-      "height": "",
-      "required": false,
-      "border": {
-        "style": "",
-        "width": "",
-        "color": ""
-      },
-      "fontSize": "",
-      "fontWeight": "",
-      "color": "",
-      "id": 13
+      "color": "#fba7a7",
+      "id": 8
     },
     {
       "type": "textarea",
       "value": "",
-      "placeholder": "About you",
+      "placeholder": "Check",
       "width": "",
       "height": "",
       "required": false,
@@ -172,10 +155,10 @@
       "fontSize": "",
       "fontWeight": "",
       "color": "",
-      "id": 15
+      "id": 9
     },
     {
-      "type": "button",
+      "type": "textarea",
       "value": "",
       "placeholder": "Button",
       "width": "",
@@ -308,7 +291,7 @@
       "fontSize": "",
       "fontWeight": "",
       "color": "",
-      "id": 24
+      "id": 15
     },
     {
       "value": "",

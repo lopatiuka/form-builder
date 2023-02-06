@@ -9,7 +9,7 @@ import { User } from '../../interfaces/user.interface';
 export class AuthService {
   constructor(private http: HttpClient) {}
 
-  login(body: User, register: boolean) {
+  login(body: any, register: boolean) {
     let path = register ? 'users' : 'login';
     let result = this.http.post<string>(`http://localhost:3000/${path}`, body);
     return result

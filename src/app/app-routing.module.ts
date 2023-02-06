@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthorizationComponent } from './authorization/authorization.component';
-import { BuilderComponent } from './builder-smart/builder.component';
+import { BuilderComponent } from './builder/builder.component';
 import { OnlyLoggedInUsersGuard } from './router-guards/only-logged-in.guard';
 
 const routes: Routes = [
