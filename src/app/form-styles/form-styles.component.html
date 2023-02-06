@@ -23,6 +23,7 @@ id="accordion-header-0"
             <mat-label>Padding (px)</mat-label>
             <input class="form-padding" data-test="input-form-padding" matInput type="number" formControlName="padding" (change)="changeFormStyles()">
         </mat-form-field>
+        <p>{{formStyles.controls.padding.value | debounce}}</p>
     </div>  
     <div>
         <mat-form-field appearance="fill">
