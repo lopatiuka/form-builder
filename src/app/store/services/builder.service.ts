@@ -1,47 +1,55 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { FormItem } from '../../interfaces/form-item.interface';
-import { FormStyles } from '../../interfaces/form-styles.interface';
 
+import { FormItem } from '../../shared/interfaces/form-item.interface';
+import { FormStyles } from '../../shared/interfaces/form-styles.interface';
+
+enum eRoutes {
+  items = 'items/',
+  selectedItems = 'selectedItems/',
+  formStyles = 'formStyles/'
+}
 
 @Injectable({
   providedIn: 'root'
 })
 export class BuilderService {
+  private cLocalhost = 'http://localhost:3000/';
+
   constructor(private http: HttpClient) {}
 
   getItems() {
-    let result = this.http.get<FormItem[]>('http://localhost:3000/items');
+    const result = this.http.get<FormItem[]>(`${this.cLocalhost}${eRoutes.items}`);
     return result
   }
 
   getDroppedItems() {
-    let result = this.http.get<FormItem[]>('http://localhost:3000/selecteditems');
+    const result = this.http.get<FormItem[]>(`${this.cLocalhost}${eRoutes.selectedItems}`);
     return result
   }
 
   dropItem(body: FormItem) {
-    let result = this.http.post<FormItem>('http://localhost:3000/selectedItems', body);
+    const result = this.http.post<FormItem>(`${this.cLocalhost}${eRoutes.selectedItems}`, body);
     return result
   }
 
   updateItem(body: FormItem) {
-    let result = this.http.patch<FormItem>(`http://localhost:3000/selectedItems/${ body.id }`, body);
+    const result = this.http.patch<FormItem>(`${this.cLocalhost}${eRoutes.selectedItems}${ body.id }`, body);
     return result
   }
 
   deleteItem(id: number) {
-    let result = this.http.delete<FormItem>(`http://localhost:3000/selectedItems/${ id }`);
+    const result = this.http.delete<FormItem>(`${this.cLocalhost}${eRoutes.selectedItems}${ id }`);
     return result
   }
 
   getFormStyles() {
-    let result = this.http.get<FormStyles>('http://localhost:3000/formStyles');
+    const result = this.http.get<FormStyles>(`${this.cLocalhost}${eRoutes.formStyles}`);
     return result
   }
 
   updateFormStyles(body: FormStyles) {
-    let result = this.http.patch<FormStyles>('http://localhost:3000/formStyles', body);
+    const result = this.http.patch<FormStyles>(`${this.cLocalhost}${eRoutes.formStyles}`, body);
     return result
   }
 }

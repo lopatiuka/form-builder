@@ -1,8 +1,10 @@
 import { ActionCreator, createReducer, on } from '@ngrx/store';
-import { closeError, deleteItemSuccess, dropItemSuccess, fail, getDroppedItemsSuccess, getFormStylesSuccess, getItemsSuccess, updateFormStylesSuccess, updateItemSuccess } from '../actions/builder.actions';
-import { FormItem } from '../../interfaces/form-item.interface';
 import { TypedAction } from '@ngrx/store/src/models';
+
+import { closeError, deleteItemSuccess, dropItemSuccess, fail, getDroppedItemsSuccess, getFormStylesSuccess, getItemsSuccess, updateFormStylesSuccess, updateItemSuccess } from '../actions/builder.actions';
+import { FormItem } from '../../shared/interfaces/form-item.interface';
 import { builderActions } from '../actions/builder.action.types';
+
 
 export const initialState = {
     items: [] as FormItem[],

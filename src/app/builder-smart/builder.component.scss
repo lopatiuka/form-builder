@@ -21,13 +21,13 @@
         align-items: center;
         width: 250px;
         height: 250px;
-        background-color: rgb(249, 246, 246);
-        border: dashed 1px rgb(216, 212, 212);
+        background-color: var(--delete-field-bg-color);
+        border: dashed 1px var(--delete-field-border-color);
         border-radius: 10px;
         z-index: 10;
 
         h2 {
-          color: rgb(186, 183, 183);
+          color: var(--delete-field-text-color);
         }
       }
 
@@ -37,7 +37,7 @@
         align-items: center;
         width: 350px;
         min-height: 150px;
-        border: 1px solid black;
+        border: 1px solid var(--form-border-color);
         border-radius: 10px;
         margin-right: 50px;
         margin-left: 30px;

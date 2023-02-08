@@ -1,9 +1,15 @@
 import { Portal, TemplatePortal } from '@angular/cdk/portal';
-import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnDestroy, OnInit, TemplateRef, ViewChild, ViewContainerRef } from '@angular/core';
+import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, OnDestroy, ViewChild } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { ServerError } from '../interfaces/error.interface';
+
+import { ServerError } from '../shared/interfaces/error.interface';
 import { closeError, login } from '../store/actions/auth.actions';
+
+enum ErrorMessages {
+  uncorrectData = 'Bad Request'
+}
 
 @Component({
   selector: 'app-authorization',
@@ -17,39 +23,38 @@ export class AuthorizationComponent implements AfterViewInit, OnDestroy {
 
   protected selectedPortal!: Portal<any>;
   protected error$: Observable<ServerError> = this.store.select(state => state.auth.error);
+  errorMessages = ErrorMessages;
 
   @ViewChild('loginForm') 
   loginFormPortal!: TemplatePortal<any>;
   @ViewChild('signupForm') 
   signupFormPortal!: TemplatePortal<any>;
 
-  user = {
-    email: '',
-    password: ''
-  }
+  user = new FormGroup({
+    email: new FormControl(''),
+    password: new FormControl('')
+  })
 
-  login(register: boolean = false) {
+  login(register: boolean = false): void {
 
     const body = {
-      email: this.user.email,
-      password: this.user.password
+      email: this.user.controls.email.value,
+      password: this.user.controls.password.value
     }
     
     this.store.dispatch(login({ payload: { body, register: register } }))
   }
 
-  ngAfterViewInit() {
-    setTimeout(() => {
-      this.selectedPortal = this.loginFormPortal;
-      this.cdr.detectChanges();
-    })
+  ngAfterViewInit(): void {
+    this.selectedPortal = this.loginFormPortal;
+    this.cdr.detectChanges();
   } 
 
-  closeError() {
+  closeError(): void {
     this.store.dispatch(closeError());
   }
 
-  ngOnDestroy() {
+  ngOnDestroy(): void {
     this.closeError();
   }
 }

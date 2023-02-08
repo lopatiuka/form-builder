@@ -16,13 +16,13 @@ export class ViewportHeightDirective implements OnInit {
 
     }
 
-    ngOnInit() {
+    ngOnInit(): void {
         this.onWindowResize();
         this.renderer.setStyle(this.el.nativeElement, 'overflow-y', 'auto');
     }
     
     @HostListener('window:resize', ['$event'])
-    onWindowResize() {
+    onWindowResize(): void {
         this.renderer.setStyle(this.el.nativeElement, 'height', `${window.innerHeight}px`);
     }
 }

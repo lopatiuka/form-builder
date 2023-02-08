@@ -1,8 +1,10 @@
 import { Component, EventEmitter, Input, Output, ChangeDetectionStrategy, OnDestroy, forwardRef } from '@angular/core';
 import { ControlValueAccessor, FormControl, FormGroup, NG_VALUE_ACCESSOR } from '@angular/forms';
-import { Observable, Subject, takeUntil } from 'rxjs';
+import { Subject, takeUntil } from 'rxjs';
+
 import { DumbComponent } from '../shared/dumb.component';
-import { FormItem } from '../interfaces/form-item.interface';
+import { FormItem } from '../shared/interfaces/form-item.interface';
+
 
 @Component({
   selector: 'app-selected-styles',
@@ -35,7 +37,7 @@ export class SelectedStylesComponent extends DumbComponent implements ControlVal
   })
 
   selectedItemControl = new FormGroup({
-    id: new FormControl(''),
+    id: new FormControl(),
     type: new FormControl(''),
     value: new FormControl(''),
     width: new FormControl(''),
@@ -49,7 +51,7 @@ export class SelectedStylesComponent extends DumbComponent implements ControlVal
   });
 
   @Input() 
-  set selectedItem(item: any) {
+  set selectedItem(item: FormItem) {
     if(item) {
       setTimeout(() => {
         this.selectedItemControl.setValue({
@@ -73,22 +75,22 @@ export class SelectedStylesComponent extends DumbComponent implements ControlVal
     }
   };
 
-  registerOnChange(onChange: any) {
+  registerOnChange(onChange: any): void {
     this.selectedItemControl.valueChanges.pipe(takeUntil(this.unsubscribe$))
     .subscribe(onChange);
   }
 
-  writeValue(value: any) { 
+  writeValue(value: any): void { 
     if(value) {
       this.selectedItemControl.setValue(value);
     }
   }
 
-  registerOnTouched(fn: any) {
+  registerOnTouched(fn: any): void {
     this.onTouched = fn;
   }
 
-  changeStyles() {
+  changeStyles(): void {
     this.changeStylesEvent.emit();
   }
 

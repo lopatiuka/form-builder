@@ -1,5 +1,6 @@
 import { CdkAccordionModule } from '@angular/cdk/accordion';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+
 import { BuilderComponent } from '../builder-smart/builder.component';
 import { FormStylesComponent } from './form-styles.component';
 

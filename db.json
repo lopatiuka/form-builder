@@ -1,10 +1,10 @@
 {
   "formStyles": {
-    "padding": 10,
-    "borderColor": "#1aa4db",
-    "borderWidth": "3",
-    "borderRadius": "10",
-    "borderStyle": "dashed"
+    "borderColor": "#3fa1de",
+    "borderWidth.px": 5,
+    "borderRadius.px": 25,
+    "borderStyle": "dashed",
+    "padding.px": 25
   },
   "users": [
     {
@@ -21,6 +21,11 @@
       "email": "admin@mail.coms",
       "password": "$2a$10$a9rHKutAi2B3O/dhq9NIdec8IpZd5qHYn.LiIqsb3GeF87zv3yEl6",
       "id": 3
+    },
+    {
+      "email": "adminnew@mail.com",
+      "password": "$2a$10$xmwbaFzOvyhPFYZpBwkHjOm1SPzeQfUf.fDSS7Rt2ZOhslSkCCmn2",
+      "id": 4
     }
   ],
   "items": [
@@ -109,24 +114,7 @@
     {
       "type": "button",
       "value": "",
-      "placeholder": "Button",
-      "width": "",
-      "height": "",
-      "required": false,
-      "border": {
-        "style": "",
-        "width": "",
-        "color": ""
-      },
-      "fontSize": "",
-      "fontWeight": "",
-      "color": "",
-      "id": 5
-    },
-    {
-      "type": "checkbox",
-      "value": "",
-      "placeholder": "Check",
+      "placeholder": "Buttons",
       "width": 250,
       "height": "",
       "required": false,
@@ -136,7 +124,24 @@
         "color": ""
       },
       "fontSize": "",
-      "fontWeight": "",
+      "fontWeight": "400",
+      "color": "",
+      "id": 5
+    },
+    {
+      "type": "checkbox",
+      "value": "",
+      "placeholder": "Check",
+      "width": 75,
+      "height": null,
+      "required": false,
+      "border": {
+        "style": "",
+        "width": "",
+        "color": ""
+      },
+      "fontSize": 25,
+      "fontWeight": "700",
       "color": "",
       "id": 6
     },
@@ -144,11 +149,11 @@
       "type": "select",
       "value": "",
       "placeholder": "Text",
-      "width": "",
-      "height": "",
+      "width": 150,
+      "height": 75,
       "required": false,
       "border": {
-        "style": "solid",
+        "style": "none",
         "width": "",
         "color": ""
       },
@@ -158,28 +163,11 @@
       "id": 7
     },
     {
-      "type": "text",
-      "placeholder": "Text",
-      "value": "",
-      "width": "",
-      "height": "",
-      "required": false,
-      "border": {
-        "style": "solid",
-        "width": 5,
-        "color": ""
-      },
-      "fontSize": "",
-      "fontWeight": "",
-      "color": "",
-      "id": 8
-    },
-    {
       "type": "textarea",
       "value": "",
       "placeholder": "Placeholder",
-      "width": "",
-      "height": "",
+      "width": 250,
+      "height": 150,
       "required": false,
       "border": {
         "style": "",
@@ -188,15 +176,15 @@
       },
       "fontSize": "",
       "fontWeight": "",
-      "color": "",
+      "color": "#ed0707",
       "id": 9
     },
     {
-      "type": "button",
+      "type": "text",
+      "placeholder": "Text",
       "value": "",
-      "placeholder": "Button",
-      "width": "",
-      "height": "",
+      "width": 230,
+      "height": 110,
       "required": false,
       "border": {
         "style": "",
@@ -207,193 +195,6 @@
       "fontWeight": "",
       "color": "",
       "id": 10
-    },
-    {
-      "type": "text",
-      "placeholder": "Text",
-      "value": "",
-      "width": "",
-      "height": "",
-      "required": false,
-      "border": {
-        "style": "",
-        "width": "",
-        "color": ""
-      },
-      "fontSize": "",
-      "fontWeight": "",
-      "color": "",
-      "id": 11
-    },
-    {
-      "type": "text",
-      "placeholder": "Text",
-      "value": "",
-      "width": "",
-      "height": "",
-      "required": false,
-      "border": {
-        "style": "",
-        "width": "",
-        "color": ""
-      },
-      "fontSize": "",
-      "fontWeight": "700",
-      "color": "",
-      "id": 12
-    },
-    {
-      "type": "text",
-      "placeholder": "Text",
-      "value": "",
-      "width": "",
-      "height": "",
-      "required": false,
-      "border": {
-        "style": "",
-        "width": "",
-        "color": ""
-      },
-      "fontSize": "",
-      "fontWeight": "700",
-      "color": "",
-      "id": 13
-    },
-    {
-      "type": "text",
-      "placeholder": "Text",
-      "value": "",
-      "width": "",
-      "height": "",
-      "required": false,
-      "border": {
-        "style": "",
-        "width": "",
-        "color": ""
-      },
-      "fontSize": "",
-      "fontWeight": "",
-      "color": "",
-      "id": 14
-    },
-    {
-      "type": "text",
-      "placeholder": "Text",
-      "value": "",
-      "width": "",
-      "height": "",
-      "required": false,
-      "border": {
-        "style": "",
-        "width": "",
-        "color": ""
-      },
-      "fontSize": "",
-      "fontWeight": "700",
-      "color": "",
-      "id": 15
-    },
-    {
-      "type": "text",
-      "placeholder": "Text",
-      "value": "",
-      "width": "",
-      "height": "",
-      "required": false,
-      "border": {
-        "style": "",
-        "width": "",
-        "color": ""
-      },
-      "fontSize": "",
-      "fontWeight": "",
-      "color": "",
-      "id": 16
-    },
-    {
-      "type": "text",
-      "placeholder": "Test",
-      "value": "",
-      "width": "",
-      "height": "",
-      "required": false,
-      "border": {
-        "style": "dashed",
-        "width": "",
-        "color": ""
-      },
-      "fontSize": "",
-      "fontWeight": "700",
-      "color": "",
-      "id": 17
-    },
-    {
-      "type": "text",
-      "placeholder": "Test",
-      "value": "",
-      "width": "",
-      "height": "",
-      "required": false,
-      "border": {
-        "style": "dashed",
-        "width": "",
-        "color": ""
-      },
-      "fontSize": "",
-      "fontWeight": "700",
-      "color": "",
-      "id": 18
-    },
-    {
-      "type": "text",
-      "placeholder": "Test",
-      "value": "",
-      "width": "",
-      "height": "",
-      "required": false,
-      "border": {
-        "style": "dashed",
-        "width": "",
-        "color": ""
-      },
-      "fontSize": "",
-      "fontWeight": "700",
-      "color": "",
-      "id": 19
-    },
-    {
-      "type": "text",
-      "placeholder": "Test",
-      "value": "",
-      "width": "",
-      "height": "",
-      "required": false,
-      "border": {
-        "style": "dashed",
-        "width": "",
-        "color": ""
-      },
-      "fontSize": "",
-      "fontWeight": "700",
-      "color": "",
-      "id": 20
-    },
-    {
-      "type": "text",
-      "placeholder": "Text",
-      "value": "",
-      "width": "",
-      "height": "",
-      "required": false,
-      "border": {
-        "style": "",
-        "width": "",
-        "color": ""
-      },
-      "fontSize": "",
-      "fontWeight": "700",
-      "color": "",
-      "id": 21
     }
   ]
 }

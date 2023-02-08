@@ -1,19 +1,18 @@
 import { TestBed } from '@angular/core/testing';
 import { StoreModule } from '@ngrx/store';
 import { MockStore, provideMockStore } from '@ngrx/store/testing';
-import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { EffectsModule } from '@ngrx/effects';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
-import { AuthEffects } from './auth.effects';
-import { login, loginSuccess } from '../actions/auth.actions';
-import { of } from 'rxjs';
 
-let mockToken = 'ACCESS_TOKEN';
+import { AuthEffects } from './auth.effects';
+import { loginSuccess } from '../actions/auth.actions';
+
+const mockToken = 'ACCESS_TOKEN';
 
 describe('Auth effects', () => {
   let store: MockStore<{ authReducer: { error: any, token: string }}>;
   let effects: AuthEffects;
-  let initialState = {
+  const initialState = {
     token: '',
     error: {
         status: false,

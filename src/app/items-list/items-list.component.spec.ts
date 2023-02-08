@@ -1,11 +1,12 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { Form } from '@angular/forms';
 import { By } from '@angular/platform-browser';
 import { first } from 'rxjs/operators';
-import { FormItem } from '../interfaces/form-item.interface';
-import { FormatPipe } from '../pipes/FormatPipe';
+
+import { FormItem } from '../shared/interfaces/form-item.interface';
+import { FormatPipe } from '../shared/pipes/FormatPipe';
 
 import { ItemsListComponent } from './items-list.component';
+
 
 describe('ItemsListComponent', () => {
   let component: ItemsListComponent;

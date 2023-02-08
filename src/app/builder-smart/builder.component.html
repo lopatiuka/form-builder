@@ -6,16 +6,17 @@
             <button (click)="closeError()">X</button>
         </div>
     </div>
+    {{formStyles$ | ngrxPush | json}}
     <h2>{{title | naturalType}}</h2>
     <section id="styles" class="chosen-field-style">
         <div class="container-xl">
             <cdk-accordion class="example-accordion">
-            <app-form-styles (changeFormStylesEvent)="changeFormStyles()" [(ngModel)]="formStyles"></app-form-styles>
-            <app-selected-styles (changeStylesEvent)="changeItemStyles()" [(ngModel)]="selectedItem"></app-selected-styles>
+                <app-form-styles (changeFormStylesEvent)="changeFormStyles()" [(ngModel)]="formStyles"></app-form-styles>
+                <app-selected-styles (changeStylesEvent)="changeItemStyles()" [(ngModel)]="selectedItem"></app-selected-styles>
             </cdk-accordion>
         </div>
     </section>
-    <div  id="form-builder" cdkDropListGroup>
+    <div id="form-builder" cdkDropListGroup>
         <section id="form">
             <div class="container">
 
@@ -29,12 +30,7 @@
             [cdkDropListData]="formItems"
             class="drop-form"
             data-test="drop-zone"
-            (cdkDropListDropped)="drop($event)" *ngIf="formStyles" [ngStyle]="{
-                'padding.px': formStyles.padding,
-                'border-style': formStyles.borderStyle,
-                'border-color': formStyles.borderColor,
-                'border-radius': formStyles.borderRadius,
-                'border-width.px': formStyles.borderWidth}">
+            (cdkDropListDropped)="drop($event)" [ngStyle]="formStyles$ | ngrxPush">
                 <app-items-list data-test="selected-items" (selectedStyles)="setSelectedItem($event)" [currentItem]="selectedItem" [items]="formItems"></app-items-list>
             </form>
         </div>

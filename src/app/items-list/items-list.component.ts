@@ -1,7 +1,8 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Form } from '@angular/forms';
+
 import { DumbComponent } from '../shared/dumb.component';
-import { FormItem } from '../interfaces/form-item.interface';
+import { FormItem } from '../shared/interfaces/form-item.interface';
 
 @Component({
   selector: 'app-items-list',
@@ -20,11 +21,11 @@ export class ItemsListComponent extends DumbComponent {
   @Output() selectedStyles = new EventEmitter();
   @Output() value = new EventEmitter();
 
-  getStyles(id: number) {
+  getStyles(id: number): void {
     this.selectedStyles.emit(id);
   }
 
-  getValue(value: string) {
+  getValue(value: string): void {
     this.value.emit(value);
   }
 }

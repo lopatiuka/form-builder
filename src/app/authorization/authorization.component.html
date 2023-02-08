@@ -1,7 +1,10 @@
 <div class="container-xl">
     <div *ngrxLet="error$; let error">
         <div *ngIf="error.status">
-            <h2 *ngIf="error.message === 'Bad Request' ">Error: Email or password is incorrect</h2>
+            <h2 *ngIf="error.message === errorMessages.uncorrectData; else regularError">Incorrect email or password</h2>
+            <ng-template #regularError>
+                <h2>Try again</h2>
+            </ng-template>
             <button (click)="closeError()">X</button>
         </div>
     </div>
@@ -9,14 +12,14 @@
 
     <ng-template cdkPortal #loginForm="cdkPortal">
         <h2>Sign in</h2>
-        <form action="http://localhost:3000/login" method="POST">
+        <form action="http://localhost:3000/login" method="POST" [formGroup]="user">
             <mat-form-field class="example-form-field">
                 <mat-label>Email</mat-label>
-                <input matInput data-test="login-email" name="email" [(ngModel)]="user.email">
+                <input matInput data-test="login-email" name="email" formControlName="email">
             </mat-form-field><br/>
             <mat-form-field class="example-form-field">
                 <mat-label>Password</mat-label>
-                <input matInput data-test="login-password" type="password" name="password" [(ngModel)]="user.password">
+                <input matInput data-test="login-password" type="password" name="password" formControlName="password">
             </mat-form-field><br/>
             <p></p>
             <button mat-raised-button data-test="login-submit" color="primary" (click)="login()">Login</button>
@@ -26,14 +29,14 @@
 
     <ng-template cdkPortal #signupForm="cdkPortal">
         <h2>Sign up</h2>
-        <form action="http://localhost:3000/users" method="POST">
+        <form action="http://localhost:3000/users" method="POST" [formGroup]="user">
             <mat-form-field class="example-form-field">
                 <mat-label>Email</mat-label>
-                <input matInput data-test="signup-email" name="email" [(ngModel)]="user.email">
+                <input matInput data-test="signup-email" name="email" formControlName="email">
             </mat-form-field><br/>
             <mat-form-field class="example-form-field">
                 <mat-label>Password</mat-label>
-                <input matInput data-test="signup-password" type="password" name="password" [(ngModel)]="user.password">
+                <input matInput data-test="signup-password" type="password" name="password" formControlName="password">
             </mat-form-field><br/>
             <button mat-raised-button data-test="signup-submit" color="primary" (click)="login(true)">Login</button>
             <p>Or <a (click)="selectedPortal = loginFormPortal">Login</a></p>

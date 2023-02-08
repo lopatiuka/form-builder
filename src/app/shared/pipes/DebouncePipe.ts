@@ -12,7 +12,10 @@ export class DebouncePipe {
    ) {
    }
 
-   transform(value: any, debounceTime?: number): any {
+   transform(value: string | null, debounceTime?: number): string {
+        if(!value) {
+            return '';
+        }
        if (this.currentValue == null) {
            this.currentValue = value;
            return value;

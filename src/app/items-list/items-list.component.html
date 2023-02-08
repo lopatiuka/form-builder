@@ -1,5 +1,6 @@
 <div *ngFor="let item of items;">
-    <div class="checkbox-wrapper" data-test="checkbox-item" [appCallout]="'Drag and drop on form'" [id]="item.id" *ngIf="item.type === 'checkbox'">
+    <app-item (selectedStyles)="getStyles($event)" [currentStyles]="currentItem" [stylesInput]="item"></app-item>
+    <!-- <div class="checkbox-wrapper" data-test="checkbox-item" [appCallout]="'Drag and drop on form'" [id]="item.id" *ngIf="item.type === 'checkbox'">
         <mat-checkbox class="example-margin" [required]="item.required" [color]="item.color" #checkbox (click)="getStyles(item.id)" cdkDrag [ngStyle]="{
             'width.px': currentItem && item.id === currentItem.id ? currentItem.width : item.width, 
             'height.px': currentItem && item.id === currentItem.id ? currentItem.height : item.height, 
@@ -63,5 +64,5 @@
                 'font-weight': currentItem && item.id === currentItem.id ? currentItem.fontWeight : item.fontWeight,
                 'color': item.color }"></textarea>
         </mat-form-field>                         
-    </div>
+    </div> -->
 </div>

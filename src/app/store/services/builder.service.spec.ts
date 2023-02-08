@@ -1,9 +1,10 @@
-import { BuilderService } from './builder.service';
 import { HttpClientModule } from '@angular/common/http';
 import { TestBed } from '@angular/core/testing';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
-import { FormStyles } from 'src/app/interfaces/form-styles.interface';
+
+import { FormStyles } from 'src/app/shared/interfaces/form-styles.interface';
+import { BuilderService } from './builder.service';
 
 
 describe('BuilderService', () => {

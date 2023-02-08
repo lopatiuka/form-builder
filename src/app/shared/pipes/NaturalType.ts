@@ -14,7 +14,7 @@ export class NaturalType {
    ) {
    }
 
-   transform(value: string, mintypingSpeed: number = 100): any {
+   transform(value: string, mintypingSpeed: number = 100): string {
       if (this.target !== value) {
        clearTimeout(this.timeoutHandle);
        this.typed = '';

@@ -1,0 +1,37 @@
+<div class="checkbox-wrapper" data-test="checkbox-item" [appCallout]="'Drag and drop on form'" [id]="item.id" 
+*ngIf="item.type === elemTypes.checkbox">
+    <mat-checkbox class="example-margin" [required]="item.required" [color]="item.color"
+     #checkbox (click)="getStyles(item.id)" cdkDrag [ngStyle]="currentItem && currentItem.id === item.id ? getAllStyles(true) : getAllStyles()">{{item.placeholder | format}}
+    </mat-checkbox>
+</div>
+<div data-test="select-item" *ngIf="item.type === elemTypes.select">
+    <mat-form-field appearance="fill"
+    (click)="getStyles(item.id)" [ngStyle]="currentItem && currentItem.id === item.id ? currentBoxStyles : boxStyles" cdkDrag>
+        <mat-label>{{item.placeholder | format}}</mat-label>
+        <mat-select [required]="item.required" 
+        [ngStyle]="currentItem && currentItem.id === item.id ? currentTextStyles : textStyles" #select>
+            <mat-option value="Option 1">
+            Option 1
+            </mat-option>
+        </mat-select>
+    </mat-form-field>                         
+</div>
+<div data-test="input-item" *ngIf="item.type === elemTypes.text">
+    <mat-form-field class="" 
+    [ngStyle]="currentItem && currentItem.id === item.id ? currentBoxStyles : boxStyles" (click)="getStyles(item.id)" cdkDrag>
+        <mat-label>{{item.placeholder}}</mat-label>
+        <input [required]="item.required" 
+        [ngStyle]="currentItem && currentItem.id === item.id ? currentTextStyles : textStyles" matInput [type]="item.type" #input>
+    </mat-form-field>
+</div>
+<div data-test="button-item" *ngIf="item.type === elemTypes.button">
+    <button mat-raised-button color="primary" (click)="getStyles(item.id)" cdkDrag 
+    [ngStyle]="currentItem && currentItem.id === item.id ? getAllStyles(true) : getAllStyles()">{{item.placeholder | format}}</button>
+</div>
+<div data-test="textarea-item" *ngIf="item.type === elemTypes.textarea">
+    <mat-form-field appearance="fill" 
+    [ngStyle]="currentItem && currentItem.id === item.id ? currentBoxStyles : boxStyles" (click)="getStyles(item.id)" cdkDrag>
+        <textarea  matInput [required]="item.required" placeholder={{item.placeholder}} #textarea 
+        [ngStyle]="currentItem && currentItem.id === item.id ? currentTextStyles : textStyles"></textarea>
+    </mat-form-field>                         
+</div>

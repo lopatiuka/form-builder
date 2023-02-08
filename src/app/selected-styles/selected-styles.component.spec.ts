@@ -1,9 +1,8 @@
 import { CdkAccordionModule } from '@angular/cdk/accordion';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { FormControl, FormGroup } from '@angular/forms';
 import { By } from '@angular/platform-browser';
-import { FormItem } from '../interfaces/form-item.interface';
 
+import { FormItem } from '../shared/interfaces/form-item.interface';
 import { SelectedStylesComponent } from './selected-styles.component';
 
 describe('SelectedStylesComponent', () => {

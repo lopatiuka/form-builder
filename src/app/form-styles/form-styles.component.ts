@@ -1,8 +1,9 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, forwardRef, Input, Output } from '@angular/core';
 import { ControlValueAccessor, FormControl, FormGroup, NG_VALUE_ACCESSOR } from '@angular/forms';
-import { Subject, takeUntil } from 'rxjs';
+import { Observer, Subject, takeUntil } from 'rxjs';
+
 import { DumbComponent } from '../shared/dumb.component';
-import { SelectedStylesComponent } from '../selected-styles/selected-styles.component';
+import { FormStyles } from '../shared/interfaces/form-styles.interface';
 
 @Component({
   selector: 'app-form-styles',
@@ -13,7 +14,7 @@ import { SelectedStylesComponent } from '../selected-styles/selected-styles.comp
     useExisting: forwardRef(() => FormStylesComponent),
     multi: true
   }],
-  // changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class FormStylesComponent extends DumbComponent implements ControlValueAccessor {
 
@@ -25,46 +26,44 @@ export class FormStylesComponent extends DumbComponent implements ControlValueAc
   }
 
   formStyles = new FormGroup({
-    padding: new FormControl(0),
+    'padding.px': new FormControl(''),
+    'borderRadius.px': new FormControl(''),
+    'borderWidth.px': new FormControl(''),
     borderStyle: new FormControl(''),
-    borderWidth: new FormControl(''),
     borderColor: new FormControl(''),
-    borderRadius: new FormControl(''),
   })
 
   @Input() 
-  set styles(item: any) {
+  set styles(item: FormStyles) {
     if(item) {
-      setTimeout(() => {
-        this.formStyles.setValue({
-          padding: item.padding,
-          borderStyle: item.borderStyle,
-          borderWidth: item.borderWidth,
-          borderColor: item.borderColor,
-          borderRadius: item.borderRadius,
-        })
-      });
+      this.formStyles.setValue({
+        'padding.px': `${item['padding.px']}`,
+        'borderRadius.px': item['borderRadius.px'],
+        'borderWidth.px': item['borderWidth.px'],
+        borderStyle: item.borderStyle,
+        borderColor: item.borderColor,
+      })
     }
   };
 
   @Output() changeFormStylesEvent = new EventEmitter();
 
-  changeFormStyles() {
+  changeFormStyles(): void {
     this.changeFormStylesEvent.emit();
   }
 
-  registerOnChange(onChange: any) {
+  registerOnChange(onChange: Partial<Observer<Partial<{ padding: string | null; borderStyle: string | null; borderWidth: string | null; borderColor: string | null; borderRadius: string | null; }>>> | undefined): void {
     this.formStyles.valueChanges.pipe(takeUntil(this.unsubscribe$))
     .subscribe(onChange);
   }
 
-  writeValue(value: any) { 
+  writeValue(value: any): void { 
     if(value) {
       this.formStyles.setValue(value);
     }
   }
 
-  registerOnTouched(fn: any) {
+  registerOnTouched(fn: () => void): void {
     this.onTouched = fn;
   }
 }

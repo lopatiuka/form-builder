@@ -1,15 +1,11 @@
 import {
     ChangeDetectorRef,
     Directive,
-    EventEmitter,
     ElementRef,
     Input,
     NgZone,
-    OnChanges,
     OnDestroy,
     Optional,
-    Output,
-    SkipSelf,
     ViewContainerRef,
     ComponentFactoryResolver,
     Component,
@@ -43,23 +39,23 @@ export class CalloutDirective implements OnDestroy {
 
     }
     
-    ngOnInit() {
+    ngOnInit(): void {
         this.element = this.elementRef.nativeElement;
     }
 
-    ngOnDestroy() {
+    ngOnDestroy(): void {
         this.hideCallout();
     }
 
-    showCallout() {
+    showCallout(): void {
         this.calloutRef = this.createCallout(this.appCallout);
-        let calloutEl = this.calloutRef.location.nativeElement;
-        let targetPos = this.getTargetCalloutLocation();
+        const calloutEl = this.calloutRef.location.nativeElement;
+        const targetPos = this.getTargetCalloutLocation();
         calloutEl.style.left = targetPos.x + 'px';
         calloutEl.style.top = targetPos.y + 'px';
     }
     
-    hideCallout() {
+    hideCallout(): void {
         if (this.calloutRef) {
             this.calloutRef.destroy();
             this.calloutRef = null;    
@@ -79,7 +75,7 @@ export class CalloutDirective implements OnDestroy {
     }
     
     private getTargetCalloutLocation(): Point {
-        let box = this.element.getBoundingClientRect();
+        const box = this.element.getBoundingClientRect();
         return new Point(box.left + box.width / 2, box.top - 10);
     }
 }

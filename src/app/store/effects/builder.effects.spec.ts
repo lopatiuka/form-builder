@@ -1,16 +1,18 @@
 import { TestBed } from '@angular/core/testing';
 import { StoreModule } from '@ngrx/store';
-import { deleteItemSuccess, dropItemSuccess, getDroppedItemsSuccess, getFormStylesSuccess, getItemsSuccess, updateFormStylesSuccess, updateItemSuccess } from '../actions/builder.actions';
 import { provideMockStore, MockStore } from '@ngrx/store/testing';
-import { FormItem } from '../../interfaces/form-item.interface';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
-import { BuilderEffects } from '../../store/effects/builder.effects';
 import { EffectsModule } from '@ngrx/effects';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
-import { FormStyles } from '../../interfaces/form-styles.interface';
 
 
-let mockItems = [
+import { deleteItemSuccess, dropItemSuccess, getDroppedItemsSuccess, getFormStylesSuccess, getItemsSuccess, updateFormStylesSuccess, updateItemSuccess } from '../actions/builder.actions';
+import { FormItem } from '../../shared/interfaces/form-item.interface';
+import { BuilderEffects } from '../../store/effects/builder.effects';
+import { FormStyles } from '../../shared/interfaces/form-styles.interface';
+
+
+const mockItems = [
   {
     id: 1,
     value: '',
@@ -30,7 +32,7 @@ let mockItems = [
   }
 ];
 
-let mockFormStyles = {
+const mockFormStyles = {
   padding: '15',
   borderColor: '#d0d5d7',
   borderWidth: '3',

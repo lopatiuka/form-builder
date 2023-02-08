@@ -21,9 +21,8 @@ id="accordion-header-0"
     <div>
         <mat-form-field>
             <mat-label>Padding (px)</mat-label>
-            <input class="form-padding" data-test="input-form-padding" matInput type="number" formControlName="padding" (change)="changeFormStyles()">
+            <input class="form-padding" data-test="input-form-padding" matInput type="number" formControlName="padding.px" (change)="changeFormStyles()">
         </mat-form-field>
-        <p>{{formStyles.controls.padding.value | debounce}}</p>
     </div>  
     <div>
         <mat-form-field appearance="fill">
@@ -47,7 +46,7 @@ id="accordion-header-0"
     <div>
         <mat-form-field>
             <mat-label>Border width (px)</mat-label>
-            <input class="form-border-width" matInput data-test="input-form-border-width" type="number" formControlName="borderWidth" (change)="changeFormStyles()">
+            <input class="form-border-width" matInput data-test="input-form-border-width" type="number" formControlName="borderWidth.px" (change)="changeFormStyles()">
         </mat-form-field>
     </div>     
     <div>
@@ -59,7 +58,7 @@ id="accordion-header-0"
     <div>
         <mat-form-field>
             <mat-label>Border radius (px)</mat-label>
-            <input matInput type="number" data-test="input-form-border-radius" formControlName="borderRadius" (change)="changeFormStyles()">
+            <input matInput type="number" data-test="input-form-border-radius" formControlName="borderRadius.px" (change)="changeFormStyles()">
         </mat-form-field>
     </div>
 </div>

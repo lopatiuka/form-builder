@@ -1,13 +1,14 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
 import { CdkDragDrop, moveItemInArray, copyArrayItem } from '@angular/cdk/drag-drop';
-import { FormItem } from '../interfaces/form-item.interface';
 import { Store } from '@ngrx/store';
-import { Observable, filter, map, takeUntil, Subject } from 'rxjs';
+import { Router } from '@angular/router';
+
+import { FormItem } from '../shared/interfaces/form-item.interface';
+import { delay, Observable, Subject } from 'rxjs';
 import { closeError, deleteItem, dropItem, getDroppedItems, getFormStyles, getItems, updateFormStyles, updateItem } from '../store/actions/builder.actions';
 import { SmartComponent } from '../shared/smart.component';
-import { ServerError } from '../interfaces/error.interface';
-import { FormStyles } from '../interfaces/form-styles.interface';
-import { Router } from '@angular/router';
+import { ServerError } from '../shared/interfaces/error.interface';
+import { FormStyles } from '../shared/interfaces/form-styles.interface';
 
 
 @Component({
@@ -23,10 +24,9 @@ export class BuilderComponent extends SmartComponent implements OnInit, OnDestro
   selectedItem!: FormItem;
   droppedItems$: Observable<FormItem[]> = this.store.select(state => state.builder.droppedItems);
   items$: Observable<FormItem[]> = this.store.select(state => state.builder.items);
-  formStyles!: FormStyles; 
+  formStyles!: FormStyles;
   error$: Observable<ServerError> = this.store.select(state => state.builder.error);
-  formStyles$ = this.store.select(state => state.builder.formStyles);
-  isMoving: boolean = false;
+  formStyles$: Subject<FormStyles> = this.store.select(state => state.builder.formStyles) as Subject<FormStyles>;
 
   constructor(private cdr: ChangeDetectorRef, private router: Router, private store: Store<{ builder: { 
     items: FormItem[], droppedItems: FormItem[], formStyles: FormStyles, error: ServerError } }>) {
@@ -38,45 +38,53 @@ export class BuilderComponent extends SmartComponent implements OnInit, OnDestro
     this.store.dispatch(getDroppedItems());
     this.store.dispatch(getFormStyles());
 
-    this.error$.pipe(this.untilComponentDestroy())
-    .subscribe((error: any) => setTimeout(() => {
-      if(error.status) {
-        return this.closeError();
-      }
-    }, 3000));
+    this.error$
+      .pipe(
+        this.untilComponentDestroy(),
+        delay(3000))
+      .subscribe((uError) => {
+        const error = uError as ServerError;
+        if(error.status) {
+          this.closeError();
+        }
+      });
 
-    this.droppedItems$.pipe(this.untilComponentDestroy())
-    .subscribe((items: any) => {
-      this.formItems = [...items];
-      this.cdr.detectChanges();
-    });
+    this.droppedItems$
+      .pipe(this.untilComponentDestroy())
+      .subscribe((uItems) => {
+        this.formItems = [...uItems as FormItem[]];
+        this.cdr.detectChanges();
+      });
 
     this.formStyles$
-    .pipe(this.untilComponentDestroy()).subscribe((styles: any) => {
-      if(Object.keys(styles).length > 0) {
-        this.formStyles = styles;
-        this.cdr.detectChanges();
-      }
-    });
+      .pipe(this.untilComponentDestroy())
+      .subscribe((uStyles) => {
+        const styles = uStyles as FormStyles;
+        if(Object.keys(styles).length > 0) {
+          this.formStyles = styles;
+          this.cdr.detectChanges();
+        }
+      });
   }
 
-  setSelectedItem(id: number) {
-    this.droppedItems$.pipe(this.untilComponentDestroy())
-    .subscribe((items: any) => {
-      let elem = items.filter((elem: FormItem) => elem.id === id);
-      this.selectedItem = elem[0];
-    });
+  setSelectedItem(id: number): void {
+    this.droppedItems$
+      .pipe(this.untilComponentDestroy())
+      .subscribe((items: any) => {
+        let elem = items.filter((elem: FormItem) => elem.id === id);
+        this.selectedItem = elem[0];
+      });
   }
 
-  changeFormStyles() {
+  changeFormStyles(): void {
     this.store.dispatch(updateFormStyles({ newFormStyles: this.formStyles }));
   }
 
-  changeItemStyles() { 
+  changeItemStyles(): void { 
     this.store.dispatch(updateItem({ item: this.selectedItem }));
   }
 
-  deleteItem(event: CdkDragDrop<any>) {
+  deleteItem(event: CdkDragDrop<any>): void {
     const id = event.previousContainer.data[event.previousIndex].id;
 
     if(id) {
@@ -84,15 +92,16 @@ export class BuilderComponent extends SmartComponent implements OnInit, OnDestro
     }
   }
 
-  logout() {
+  logout(): void {
     document.cookie = 'accessToken=';
     this.router.navigate(['login']);
   }
 
-  drop(event: CdkDragDrop<any>) {
+  drop(event: CdkDragDrop<any>): void {
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
-    } else {
+    } 
+    else {
       copyArrayItem(
         event.previousContainer.data,
         event.container.data,
@@ -103,7 +112,7 @@ export class BuilderComponent extends SmartComponent implements OnInit, OnDestro
     }
   }
   
-  closeError() {
+  closeError(): void {
     this.store.dispatch(closeError());
   }
 }

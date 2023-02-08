@@ -1,5 +1,6 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
 
+
 export abstract class DumbComponent {
 
    private readonly subClassConstructor: Function;

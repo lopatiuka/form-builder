@@ -3,7 +3,8 @@ import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { TestBed } from '@angular/core/testing';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
-import { User } from 'src/app/interfaces/user.interface'
+
+import { User } from 'src/app/shared/interfaces/user.interface'
 import { AuthService } from './auth.service';
 
 describe('AuthService', () => {

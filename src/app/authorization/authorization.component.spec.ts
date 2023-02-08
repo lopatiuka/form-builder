@@ -4,6 +4,7 @@ import { StoreModule } from '@ngrx/store';
 
 import { AuthorizationComponent } from './authorization.component';
 
+
 describe('AuthorizationComponent', () => {
   let component: AuthorizationComponent;
   let fixture: ComponentFixture<AuthorizationComponent>;
