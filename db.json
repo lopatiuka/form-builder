@@ -115,7 +115,7 @@
       "type": "button",
       "value": "",
       "placeholder": "Buttons",
-      "width": 180,
+      "width": 150,
       "height": 55,
       "required": false,
       "border": {

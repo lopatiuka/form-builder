@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 
 import { FormItem } from '../../shared/interfaces/form-item.interface';
 import { delay, Observable, Subject } from 'rxjs';
-import { closeError, deleteItem, dropItem, getDroppedItems, getFormStyles, getItems, updateFormStyles, updateItem } from '../../store/actions/builder.actions';
+import { closeError, deleteItem, dropItem, getDroppedItems, getFormStyles, getItems, updateFormStyles, updateItem } from '../../core/store/actions/builder.actions';
 import { SmartComponent } from '../../shared/components/smart.component';
 import { ServerError } from '../../shared/interfaces/error.interface';
 import { FormStyles } from '../../shared/interfaces/form-styles.interface';

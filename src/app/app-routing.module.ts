@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { AuthorizationComponent } from './authorization/authorization.component';
 import { BuilderComponent } from './builder/builder-smart/builder.component';
-import { AuthGuard } from './core/router-guards/AuthGuard';
+import { AuthGuard } from './core/guards/AuthGuard';
 
 
 const routes: Routes = [

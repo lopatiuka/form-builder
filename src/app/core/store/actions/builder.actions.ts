@@ -1,9 +1,9 @@
 import { createAction, props } from '@ngrx/store';
 
 import { builderActions } from './builder.action.types';
-import { FormItem } from '../../shared/interfaces/form-item.interface';
-import { ServerError } from '../../shared/interfaces/error.interface';
-import { FormStyles } from '../../shared/interfaces/form-styles.interface';
+import { FormItem } from '../../../shared/interfaces/form-item.interface';
+import { ServerError } from '../../../shared/interfaces/error.interface';
+import { FormStyles } from '../../../shared/interfaces/form-styles.interface';
 
 
 export const getItems = createAction(builderActions.GET_ITEMS);

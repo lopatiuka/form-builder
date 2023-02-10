@@ -86,7 +86,7 @@ export class SelectedStylesComponent extends DumbComponent implements ControlVal
     }
   }
 
-  registerOnTouched(fn: any): void {
+  registerOnTouched(fn: () => void): void {
     this.onTouched = fn;
   }
 

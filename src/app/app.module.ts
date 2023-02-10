@@ -4,8 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { httpInterceptorProviders } from './core/http-interceptors';
-import { CoreModule } from './store/core.module';
+import { CoreModule } from './core/core.module';
 import { AuthModule } from './authorization/auth.module';
 import { BuilderModule } from './builder/builder.module';
 
@@ -22,7 +21,7 @@ import { BuilderModule } from './builder/builder.module';
     CoreModule,
     AuthModule
   ],
-  providers: [httpInterceptorProviders],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

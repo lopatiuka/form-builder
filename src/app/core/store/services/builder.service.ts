@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-import { FormItem } from '../../shared/interfaces/form-item.interface';
-import { FormStyles } from '../../shared/interfaces/form-styles.interface';
+import { FormItem } from '../../../shared/interfaces/form-item.interface';
+import { FormStyles } from '../../../shared/interfaces/form-styles.interface';
 
 enum eRoutes {
   items = 'items/',

@@ -5,7 +5,7 @@ import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 
 import { ServerError } from '../shared/interfaces/error.interface';
-import { closeError, login } from '../store/actions/auth.actions';
+import { closeError, login } from '../core/store/actions/auth.actions';
 
 enum ErrorMessages {
   uncorrectData = 'Bad Request'
