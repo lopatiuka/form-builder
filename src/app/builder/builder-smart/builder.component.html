@@ -6,13 +6,13 @@
             <button (click)="closeError()">X</button>
         </div>
     </div>
-    {{formStyles$ | ngrxPush | json}}
+        Builder: {{itemStyles.value | json}}
     <h2>{{title | naturalType}}</h2>
     <section id="styles" class="chosen-field-style">
         <div class="container-xl">
             <cdk-accordion class="example-accordion">
-                <app-form-styles (changeFormStylesEvent)="changeFormStyles()" [(ngModel)]="formStyles"></app-form-styles>
-                <app-selected-styles (changeStylesEvent)="changeItemStyles()" [(ngModel)]="selectedItem"></app-selected-styles>
+                <app-form-styles (changeFormStylesEvent)="changeFormStyles()" [formControl]="formStyles"></app-form-styles>
+                <app-selected-styles (changeStylesEvent)="changeItemStyles()" [formControl]="itemStyles"></app-selected-styles>
             </cdk-accordion>
         </div>
     </section>

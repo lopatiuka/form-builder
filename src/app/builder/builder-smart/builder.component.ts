@@ -3,12 +3,13 @@ import { CdkDragDrop, moveItemInArray, copyArrayItem } from '@angular/cdk/drag-d
 import { Store } from '@ngrx/store';
 import { Router } from '@angular/router';
 
-import { FormItem } from '../shared/interfaces/form-item.interface';
+import { FormItem } from '../../shared/interfaces/form-item.interface';
 import { delay, Observable, Subject } from 'rxjs';
-import { closeError, deleteItem, dropItem, getDroppedItems, getFormStyles, getItems, updateFormStyles, updateItem } from '../store/actions/builder.actions';
-import { SmartComponent } from '../shared/smart.component';
-import { ServerError } from '../shared/interfaces/error.interface';
-import { FormStyles } from '../shared/interfaces/form-styles.interface';
+import { closeError, deleteItem, dropItem, getDroppedItems, getFormStyles, getItems, updateFormStyles, updateItem } from '../../store/actions/builder.actions';
+import { SmartComponent } from '../../shared/components/smart.component';
+import { ServerError } from '../../shared/interfaces/error.interface';
+import { FormStyles } from '../../shared/interfaces/form-styles.interface';
+import { FormControl } from '@angular/forms';
 
 
 @Component({
@@ -24,7 +25,8 @@ export class BuilderComponent extends SmartComponent implements OnInit, OnDestro
   selectedItem!: FormItem;
   droppedItems$: Observable<FormItem[]> = this.store.select(state => state.builder.droppedItems);
   items$: Observable<FormItem[]> = this.store.select(state => state.builder.items);
-  formStyles!: FormStyles;
+  formStyles = new FormControl();
+  itemStyles = new FormControl();
   error$: Observable<ServerError> = this.store.select(state => state.builder.error);
   formStyles$: Subject<FormStyles> = this.store.select(state => state.builder.formStyles) as Subject<FormStyles>;
 
@@ -59,9 +61,11 @@ export class BuilderComponent extends SmartComponent implements OnInit, OnDestro
     this.formStyles$
       .pipe(this.untilComponentDestroy())
       .subscribe((uStyles) => {
-        const styles = uStyles as FormStyles;
-        if(Object.keys(styles).length > 0) {
-          this.formStyles = styles;
+        const formStyles = uStyles as FormStyles;
+        if(Object.keys(formStyles).length > 0) {
+          this.formStyles.setValue({
+              ...formStyles
+          });
           this.cdr.detectChanges();
         }
       });
@@ -72,16 +76,18 @@ export class BuilderComponent extends SmartComponent implements OnInit, OnDestro
       .pipe(this.untilComponentDestroy())
       .subscribe((items: any) => {
         let elem = items.filter((elem: FormItem) => elem.id === id);
-        this.selectedItem = elem[0];
+          this.itemStyles.setValue(elem[0]);
       });
   }
 
   changeFormStyles(): void {
-    this.store.dispatch(updateFormStyles({ newFormStyles: this.formStyles }));
+    this.store.dispatch(updateFormStyles({ newFormStyles: this.formStyles.value }));
   }
 
   changeItemStyles(): void { 
-    this.store.dispatch(updateItem({ item: this.selectedItem }));
+    if(this.itemStyles.value.id) {
+      this.store.dispatch(updateItem({ item: this.itemStyles.value }));
+    }
   }
 
   deleteItem(event: CdkDragDrop<any>): void {

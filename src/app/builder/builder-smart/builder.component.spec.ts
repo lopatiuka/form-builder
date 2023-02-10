@@ -8,10 +8,10 @@ import { EffectsModule } from '@ngrx/effects';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 import { BuilderComponent } from './builder.component';
-import { FormItem } from '../shared/interfaces/form-item.interface';
-import { BuilderEffects } from '../store/effects/builder.effects';
-import { FormStyles } from '../shared/interfaces/form-styles.interface';
-import { builderReducer } from '../store/reducers/builder.reducer';
+import { FormItem } from '../../shared/interfaces/form-item.interface';
+import { BuilderEffects } from '../../store/effects/builder.effects';
+import { FormStyles } from '../../shared/interfaces/form-styles.interface';
+import { builderReducer } from '../../store/reducers/builder.reducer';
 
 
 describe('BuilderComponent', () => {

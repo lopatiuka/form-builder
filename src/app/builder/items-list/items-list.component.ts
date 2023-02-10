@@ -1,8 +1,8 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Form } from '@angular/forms';
 
-import { DumbComponent } from '../shared/dumb.component';
-import { FormItem } from '../shared/interfaces/form-item.interface';
+import { DumbComponent } from '../../shared/components/dumb.component';
+import { FormItem } from '../../shared/interfaces/form-item.interface';
 
 @Component({
   selector: 'app-items-list',

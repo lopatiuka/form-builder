@@ -2,8 +2,8 @@ import { ChangeDetectionStrategy, Component, EventEmitter, forwardRef, Input, Ou
 import { ControlValueAccessor, FormControl, FormGroup, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { Observer, Subject, takeUntil } from 'rxjs';
 
-import { DumbComponent } from '../shared/dumb.component';
-import { FormStyles } from '../shared/interfaces/form-styles.interface';
+import { DumbComponent } from '../../shared/components/dumb.component';
+import { FormStyles } from '../../shared/interfaces/form-styles.interface';
 
 @Component({
   selector: 'app-form-styles',
@@ -37,7 +37,7 @@ export class FormStylesComponent extends DumbComponent implements ControlValueAc
   set styles(item: FormStyles) {
     if(item) {
       this.formStyles.setValue({
-        'padding.px': `${item['padding.px']}`,
+        'padding.px': item['padding.px'],
         'borderRadius.px': item['borderRadius.px'],
         'borderWidth.px': item['borderWidth.px'],
         borderStyle: item.borderStyle,
@@ -57,7 +57,7 @@ export class FormStylesComponent extends DumbComponent implements ControlValueAc
     .subscribe(onChange);
   }
 
-  writeValue(value: any): void { 
+  writeValue(value: FormStyles): void { 
     if(value) {
       this.formStyles.setValue(value);
     }

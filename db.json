@@ -1,10 +1,10 @@
 {
   "formStyles": {
     "borderColor": "#3fa1de",
-    "borderWidth.px": 5,
-    "borderRadius.px": 25,
-    "borderStyle": "dashed",
-    "padding.px": 25
+    "borderWidth.px": 2,
+    "borderRadius.px": 15,
+    "borderStyle": "solid",
+    "padding.px": 35
   },
   "users": [
     {
@@ -115,17 +115,17 @@
       "type": "button",
       "value": "",
       "placeholder": "Buttons",
-      "width": 250,
-      "height": "",
+      "width": 180,
+      "height": 55,
       "required": false,
       "border": {
-        "style": "",
-        "width": "",
-        "color": ""
+        "style": "solid",
+        "width": 5,
+        "color": "#3e3737"
       },
-      "fontSize": "",
-      "fontWeight": "400",
-      "color": "",
+      "fontSize": 17,
+      "fontWeight": "500",
+      "color": "#f2f2f2",
       "id": 5
     },
     {
@@ -149,7 +149,7 @@
       "type": "select",
       "value": "",
       "placeholder": "Text",
-      "width": 150,
+      "width": 204,
       "height": 75,
       "required": false,
       "border": {

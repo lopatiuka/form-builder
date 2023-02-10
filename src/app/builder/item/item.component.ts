@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy } from '@angular/core';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { DumbComponent } from '../shared/dumb.component';
-import { FormItem } from '../shared/interfaces/form-item.interface';
+import { DumbComponent } from '../../shared/components/dumb.component';
+import { FormItem } from '../../shared/interfaces/form-item.interface';
 
 enum ElemTypes {
   checkbox = 'checkbox',

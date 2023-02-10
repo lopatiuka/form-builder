@@ -1,6 +1,5 @@
+import { CdkAccordionModule } from '@angular/cdk/accordion';
 import { DragDropModule } from '@angular/cdk/drag-drop';
-import { PortalModule } from '@angular/cdk/portal';
-import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
@@ -11,29 +10,37 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LetModule, PushModule } from '@ngrx/component';
-import { AuthorizationComponent } from '../authorization/authorization.component';
-import { AuthGuard } from '../router-guards/AuthGuard';
+import { BuilderComponent } from './builder-smart/builder.component';
+import { FormStylesComponent } from './form-styles/form-styles.component';
+import { ItemComponent } from './item/item.component';
+import { ItemsListComponent } from './items-list/items-list.component';
+import { SelectedStylesComponent } from './selected-styles/selected-styles.component';
+import { SharedModule } from '../shared/shared.module';
+
 
 @NgModule({
     declarations: [
-        AuthorizationComponent,
+        ItemComponent,
+        ItemsListComponent,
+        BuilderComponent,
+        SelectedStylesComponent,
+        FormStylesComponent,
     ],
     imports: [
-        PortalModule, 
+        CdkAccordionModule,
         MatInputModule,
         MatButtonModule,
+        DragDropModule,
         MatCheckboxModule,
         MatSelectModule,
         MatGridListModule,
+        BrowserAnimationsModule,
         MatFormFieldModule,
         FormsModule,
         ReactiveFormsModule,
         LetModule,
         PushModule,
-        CommonModule
-    ],
-    providers: [
-        AuthGuard
-    ],
+        SharedModule
+    ]
 })
-export class AuthModule {}
+export class BuilderModule {}

@@ -17,8 +17,8 @@ id="accordion-header-1"
     [style.display]="accordionItem1.expanded ? '' : 'none'"
     [attr.id]="'accordion-body-1'"
     [attr.aria-labelledby]="'accordion-header-1'"
-    data-test="accordion-body-item-styles">
-        <div class="selected-item-styles" *ngIf="selectedItemControl.value.id else elseBlock" [formGroup]="selectedItemControl">
+    data-test="accordion-body-item-styles" [formGroup]="selectedItemControl">
+    item: {{selectedItemControl.value | json}}
             <div class="styles styles--regular">
                 <div>
                     <mat-form-field>
@@ -108,9 +108,4 @@ id="accordion-header-1"
                 </mat-form-field>
             </div>
         </div>
-
-        <ng-template #elseBlock>
-            <h2 data-test="no-item-selected" class="title">Select item</h2>
-        </ng-template>
-    </div>
 </cdk-accordion-item>

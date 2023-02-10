@@ -4,10 +4,10 @@ import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from 'src/environments/environment';
 
-import { AuthEffects } from '../store/effects/auth.effects';
-import { BuilderEffects } from '../store/effects/builder.effects';
-import { authReducer } from '../store/reducers/auth.reducer';
-import { builderReducer } from '../store/reducers/builder.reducer';
+import { AuthEffects } from './effects/auth.effects';
+import { BuilderEffects } from './effects/builder.effects';
+import { authReducer } from './reducers/auth.reducer';
+import { builderReducer } from './reducers/builder.reducer';
 
 @NgModule({
     imports: [

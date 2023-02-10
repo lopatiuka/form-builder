@@ -2,8 +2,8 @@ import { Component, EventEmitter, Input, Output, ChangeDetectionStrategy, OnDest
 import { ControlValueAccessor, FormControl, FormGroup, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { Subject, takeUntil } from 'rxjs';
 
-import { DumbComponent } from '../shared/dumb.component';
-import { FormItem } from '../shared/interfaces/form-item.interface';
+import { DumbComponent } from '../../shared/components/dumb.component';
+import { FormItem } from '../../shared/interfaces/form-item.interface';
 
 
 @Component({
@@ -80,8 +80,8 @@ export class SelectedStylesComponent extends DumbComponent implements ControlVal
     .subscribe(onChange);
   }
 
-  writeValue(value: any): void { 
-    if(value) {
+  writeValue(value: FormItem): void { 
+    if(value && value.id) {
       this.selectedItemControl.setValue(value);
     }
   }
