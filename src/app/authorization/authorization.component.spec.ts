@@ -1,6 +1,9 @@
+import { PortalModule } from '@angular/cdk/portal';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { StoreModule } from '@ngrx/store';
 
 import { AuthorizationComponent } from './authorization.component';
+
 
 describe('AuthorizationComponent', () => {
   let component: AuthorizationComponent;
@@ -8,7 +11,11 @@ describe('AuthorizationComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [AuthorizationComponent]
+      declarations: [AuthorizationComponent],
+      imports: [
+        StoreModule.forRoot({}),
+        PortalModule
+      ]
     })
     .compileComponents();
 

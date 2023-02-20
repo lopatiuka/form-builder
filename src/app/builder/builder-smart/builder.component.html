@@ -1,0 +1,45 @@
+<div cdViewportHeight>
+    <button class="logout-btn" mat-raised-button color="primary" (click)="logout()">Logout</button>
+    <div *ngrxLet="error$; let error">
+        <div *ngIf="error.status">
+            <h2>Something wrong, try again</h2>
+            <button (click)="closeError()">X</button>
+        </div>
+    </div>
+    <h2>{{title | naturalType}}</h2>
+    <section id="styles" class="chosen-field-style">
+        <div class="container-xl">
+            <cdk-accordion class="example-accordion">
+                <app-form-styles (changeFormStylesEvent)="changeFormStyles()" [formControl]="formStyles"></app-form-styles>
+                <app-selected-styles (changeStylesEvent)="changeItemStyles()" [formControl]="itemStyles"></app-selected-styles>
+            </cdk-accordion>
+        </div>
+    </section>
+    <div id="form-builder" cdkDropListGroup>
+        <section id="form">
+            <div class="container">
+
+            <div>
+                <div class="delete-field" data-test="delete-item" cdkDropList (cdkDropListDropped)="deleteItem($event)">
+                    <h2>Drag here to delete</h2>
+                </div>
+            </div>
+            <form
+            cdkDropList
+            [cdkDropListData]="formItems"
+            class="drop-form"
+            data-test="drop-zone"
+            (cdkDropListDropped)="drop($event)" [ngStyle]="formStyles$ | ngrxPush">
+                <app-items-list data-test="selected-items" (selectedStyles)="setSelectedItem($event)" [currentItem]="selectedItem" [items]="formItems"></app-items-list>
+            </form>
+        </div>
+    </section>
+    <section id="available-fields">
+        <div class="container" cdkDropList
+        [cdkDropListData]="items$ | ngrxPush"
+        cdkDropListSortingDisabled>
+        <h3>Available fields</h3>
+            <app-items-list data-test="available-items" [items]="items$ | ngrxPush"></app-items-list>
+        </div>
+    </section>
+</div>

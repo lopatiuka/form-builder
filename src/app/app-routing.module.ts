@@ -1,13 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+
 import { AuthorizationComponent } from './authorization/authorization.component';
-import { BuilderComponent } from './builder/builder.component';
-import { OnlyLoggedInUsersGuard } from './router-guards/only-logged-in.guard';
+import { BuilderComponent } from './builder/builder-smart/builder.component';
+import { AuthGuard } from './core/guards/AuthGuard';
+
 
 const routes: Routes = [
   { path: '', redirectTo: '/builder', pathMatch: 'full' },
   { path: 'login', component: AuthorizationComponent },
-  { path: 'builder', canActivate: [OnlyLoggedInUsersGuard], component: BuilderComponent },
+  { path: 'builder', canActivate: [AuthGuard], component: BuilderComponent },
 ];
 
 @NgModule({

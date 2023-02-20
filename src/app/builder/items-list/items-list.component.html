@@ -1,0 +1,3 @@
+<div *ngFor="let item of items;">
+    <app-item (selectedStyles)="getStyles($event)" [currentStyles]="currentItem" [stylesInput]="item"></app-item>
+</div>

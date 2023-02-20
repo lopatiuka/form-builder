@@ -1,0 +1,9 @@
+##Callout
+Shows callout on element hover
+Callout is a new dynamically created component
+
+##Item-border
+adds bottom border to the element
+
+##Viewpot height
+sets the height of the root element as in the viewport

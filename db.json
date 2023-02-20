@@ -1,10 +1,10 @@
 {
   "formStyles": {
-    "padding": 10,
-    "borderColor": "#0c78a7",
-    "borderWidth": 1,
-    "borderRadius": 0,
-    "borderStyle": "solid"
+    "borderColor": "#3fa1de",
+    "borderWidth.px": 2,
+    "borderRadius.px": 15,
+    "borderStyle": "solid",
+    "padding.px": 35
   },
   "users": [
     {
@@ -21,6 +21,11 @@
       "email": "admin@mail.coms",
       "password": "$2a$10$a9rHKutAi2B3O/dhq9NIdec8IpZd5qHYn.LiIqsb3GeF87zv3yEl6",
       "id": 3
+    },
+    {
+      "email": "adminnew@mail.com",
+      "password": "$2a$10$xmwbaFzOvyhPFYZpBwkHjOm1SPzeQfUf.fDSS7Rt2ZOhslSkCCmn2",
+      "id": 4
     }
   ],
   "items": [
@@ -107,62 +112,79 @@
   ],
   "selectedItems": [
     {
-      "type": "text",
-      "placeholder": "Text",
+      "type": "button",
       "value": "",
-      "width": 292,
-      "height": 162,
+      "placeholder": "Buttons",
+      "width": 150,
+      "height": 55,
       "required": false,
       "border": {
         "style": "solid",
-        "width": 2,
-        "color": "#7a5c5c"
+        "width": 5,
+        "color": "#3e3737"
       },
-      "fontSize": 23,
-      "fontWeight": "700",
-      "color": "#e23232",
-      "id": 1
+      "fontSize": 17,
+      "fontWeight": "500",
+      "color": "#f2f2f2",
+      "id": 5
     },
     {
-      "type": "button",
+      "type": "checkbox",
       "value": "",
-      "placeholder": "ButtDsd",
-      "width": "",
-      "height": "",
+      "placeholder": "Check",
+      "width": 75,
+      "height": null,
       "required": false,
       "border": {
         "style": "",
         "width": "",
         "color": ""
       },
-      "fontSize": "",
-      "fontWeight": "",
-      "color": "#fba7a7",
-      "id": 8
+      "fontSize": 25,
+      "fontWeight": "700",
+      "color": "",
+      "id": 6
     },
     {
-      "type": "textarea",
+      "type": "select",
       "value": "",
-      "placeholder": "Placeholder",
-      "width": "",
-      "height": "",
+      "placeholder": "Text",
+      "width": 204,
+      "height": 75,
       "required": false,
       "border": {
-        "style": "",
+        "style": "none",
         "width": "",
         "color": ""
       },
       "fontSize": "",
       "fontWeight": "",
       "color": "",
+      "id": 7
+    },
+    {
+      "type": "textarea",
+      "value": "",
+      "placeholder": "Placeholder",
+      "width": 250,
+      "height": 150,
+      "required": false,
+      "border": {
+        "style": "",
+        "width": "",
+        "color": ""
+      },
+      "fontSize": "",
+      "fontWeight": "",
+      "color": "#ed0707",
       "id": 9
     },
     {
       "type": "text",
       "placeholder": "Text",
       "value": "",
-      "width": "",
-      "height": "",
+      "width": 230,
+      "height": 110,
       "required": false,
       "border": {
         "style": "",
@@ -173,40 +195,6 @@
       "fontWeight": "",
       "color": "",
       "id": 10
-    },
-    {
-      "type": "checkbox",
-      "value": "",
-      "placeholder": "Check",
-      "width": "",
-      "height": "",
-      "required": false,
-      "border": {
-        "style": "",
-        "width": "",
-        "color": ""
-      },
-      "fontSize": "",
-      "fontWeight": "",
-      "color": "",
-      "id": 11
-    },
-    {
-      "type": "text",
-      "placeholder": "Text",
-      "value": "",
-      "width": "",
-      "height": "",
-      "required": false,
-      "border": {
-        "style": "",
-        "width": "",
-        "color": ""
-      },
-      "fontSize": "",
-      "fontWeight": "",
-      "color": "",
-      "id": 12
     }
   ]
 }
